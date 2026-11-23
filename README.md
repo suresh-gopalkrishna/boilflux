@@ -7,8 +7,8 @@
 <p align="center"><b>Open inverse heat transfer for boiling and quenching</b></p>
 
 <p align="center">
-  <a href="https://github.com/boilflux/boilflux/actions/workflows/ci.yml"><img src="https://github.com/boilflux/boilflux/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://boilflux.github.io/boilflux"><img src="https://img.shields.io/badge/docs-website-0f2742" alt="Docs"></a>
+  <a href="https://github.com/suresh-gopalkrishna/boilflux/actions/workflows/ci.yml"><img src="https://github.com/suresh-gopalkrishna/boilflux/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://suresh-gopalkrishna.github.io/boilflux"><img src="https://img.shields.io/badge/docs-website-0f2742" alt="Docs"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-f26b1d" alt="MIT licence"></a>
   <img src="https://img.shields.io/badge/python-%E2%89%A53.10-4cc3ff" alt="Python 3.10+">
   <a href="https://doi.org/10.1016/j.applthermaleng.2026.132481"><img src="https://img.shields.io/badge/method-ATE%202026-555" alt="Method paper"></a>
@@ -50,7 +50,7 @@ regularisation and the discrepancy principle.
 
 ```bash
 pip install boilflux                                         # once released on PyPI
-pip install git+https://github.com/boilflux/boilflux.git  # latest
+pip install git+https://github.com/suresh-gopalkrishna/boilflux.git  # latest
 ```
 
 ## Quick start
@@ -69,7 +69,7 @@ print(qf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
 ```
 
 To use your own camera data, see `examples/02_experimental_ir_template.py` and the
-[data guide](https://boilflux.github.io/boilflux/user-guide/data/).
+[data guide](https://suresh-gopalkrishna.github.io/boilflux/user-guide/data/).
 
 ## BF-Bench results (v0.1.0, adjoint CGM, σ = 2 K)
 
@@ -86,7 +86,7 @@ Scores are computed over the frames unaffected by the end-time effect. Reproduce
 
 Theory, **boiling physics guide** (nucleate boiling, CHF/DNB, transition boiling, Leidenfrost, film boiling,
 rewetting), CFD/OpenFOAM/PINN/neural-operator modelling, user guide, API, benchmark, related software and
-roadmap: **https://boilflux.github.io/boilflux**
+roadmap: **https://suresh-gopalkrishna.github.io/boilflux**
 
 ## Citing
 

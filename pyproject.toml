@@ -33,10 +33,10 @@ ml = ["torch>=2.2", "h5py>=3.9", "fsspec>=2023.6", "aiohttp>=3.9", "requests>=2.
 boilflux = "boilflux.cli:main"
 
 [project.urls]
-Homepage = "https://boilflux.github.io/boilflux"
-Documentation = "https://boilflux.github.io/boilflux"
-Repository = "https://github.com/boilflux/boilflux"
-Issues = "https://github.com/boilflux/boilflux/issues"
+Homepage = "https://suresh-gopalkrishna.github.io/boilflux"
+Documentation = "https://suresh-gopalkrishna.github.io/boilflux"
+Repository = "https://github.com/suresh-gopalkrishna/boilflux"
+Issues = "https://github.com/suresh-gopalkrishna/boilflux/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

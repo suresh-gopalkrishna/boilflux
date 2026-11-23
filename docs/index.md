@@ -14,7 +14,7 @@ back face, with a nonlinear 3D model and the adjoint conjugate-gradient method.<
 
 [Get started](getting-started.md){ .md-button .md-button--primary }
 [Read the theory](theory/index.md){ .md-button }
-[View on GitHub](https://github.com/boilflux/boilflux){ .md-button }
+[View on GitHub](https://github.com/suresh-gopalkrishna/boilflux){ .md-button }
 
 <div class="bf-badges"><span>MIT licence</span><span>Python ≥ 3.10</span><span>3D · nonlinear · moving plate</span><span>adjoint CGM</span><span>benchmarks with ground truth</span></div>
 
@@ -102,7 +102,7 @@ moving stagnation point.</figcaption>
 ## Try it in a minute
 
 ```bash
-pip install boilflux          # or: pip install git+https://github.com/boilflux/boilflux
+pip install boilflux          # or: pip install git+https://github.com/suresh-gopalkrishna/boilflux
 boilflux demo                 # synthetic moving-plate quench -> inversion -> figures
 boilflux bench                # run all BF-Bench cases and print the score table
 ```

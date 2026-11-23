@@ -16,7 +16,7 @@ benchmark cases, experimental datasets, documentation and bug reports are all we
 ## Development setup
 
 ```bash
-git clone https://github.com/boilflux/boilflux.git
+git clone https://github.com/suresh-gopalkrishna/boilflux.git
 cd boilflux
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev,docs]"
@@ -46,4 +46,4 @@ right to share (check your employer's and institution's IP policy for code and e
 
 ## Code of conduct
 
-Participation is governed by our [Code of Conduct](https://github.com/boilflux/boilflux/blob/main/CODE_OF_CONDUCT.md).
+Participation is governed by our [Code of Conduct](https://github.com/suresh-gopalkrishna/boilflux/blob/main/CODE_OF_CONDUCT.md).

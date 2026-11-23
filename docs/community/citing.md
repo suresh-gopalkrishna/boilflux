@@ -32,6 +32,6 @@ Each release is archived on Zenodo with its own DOI. GitHub's *Cite this reposit
   title   = {BoilFlux: open inverse heat transfer for boiling and quenching},
   year    = {2026},
   version = {0.1.0},
-  url     = {https://github.com/boilflux/boilflux}
+  url     = {https://github.com/suresh-gopalkrishna/boilflux}
 }
 ```

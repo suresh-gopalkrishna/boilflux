@@ -16,7 +16,7 @@ benchmark cases, experimental datasets, documentation and bug reports are all we
 ## Development setup
 
 ```bash
-git clone https://github.com/boilflux/boilflux.git
+git clone https://github.com/suresh-gopalkrishna/boilflux.git
 cd boilflux
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev,docs]"

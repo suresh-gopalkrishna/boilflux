@@ -13,13 +13,13 @@ BoilFlux needs Python 3.10 or newer and depends only on NumPy, SciPy, Matplotlib
 === "latest from GitHub"
 
     ```bash
-    pip install git+https://github.com/boilflux/boilflux.git
+    pip install git+https://github.com/suresh-gopalkrishna/boilflux.git
     ```
 
 === "development"
 
     ```bash
-    git clone https://github.com/boilflux/boilflux.git
+    git clone https://github.com/suresh-gopalkrishna/boilflux.git
     cd boilflux
     pip install -e ".[dev,docs]"
     pytest

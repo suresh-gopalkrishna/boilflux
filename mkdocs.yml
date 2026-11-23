@@ -1,8 +1,8 @@
 site_name: BoilFlux
 site_description: Open inverse heat transfer for boiling and quenching
-site_url: https://boilflux.github.io/boilflux/
-repo_url: https://github.com/boilflux/boilflux
-repo_name: boilflux/boilflux
+site_url: https://suresh-gopalkrishna.github.io/boilflux/
+repo_url: https://github.com/suresh-gopalkrishna/boilflux
+repo_name: suresh-gopalkrishna/boilflux
 edit_uri: edit/main/docs/
 copyright: >
   Code: MIT licence · Documentation and data: CC BY 4.0 · © 2026 Suresh Babu Gopalkrishna and the BoilFlux contributors
@@ -104,5 +104,5 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/boilflux/boilflux
+      link: https://github.com/suresh-gopalkrishna/boilflux
   generator: false

@@ -5,8 +5,8 @@ type: software
 version: 0.1.0
 date-released: 2026-11-23
 license: MIT
-repository-code: "https://github.com/boilflux/boilflux"
-url: "https://boilflux.github.io/boilflux"
+repository-code: "https://github.com/suresh-gopalkrishna/boilflux"
+url: "https://suresh-gopalkrishna.github.io/boilflux"
 keywords:
   - inverse heat conduction problem
   - quenching
