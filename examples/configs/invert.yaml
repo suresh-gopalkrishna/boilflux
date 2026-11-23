@@ -1,0 +1,8 @@
+# quenchflux invert dataset.npz -c examples/configs/invert.yaml -o result/
+cgm:
+  max_iter: 200
+  tau: 1.02            # discrepancy-principle safety factor
+  gamma: 0.0           # zeroth-order Tikhonov weight [K^2 per (MW/m^2)^2]
+  beta: polak-ribiere
+# material_csv: my_material.csv   # columns T_C,k,rho,cp
+# top_loss: {h: 10.0, emissivity: 0.92, T_amb: 25.0}

@@ -1,0 +1,18 @@
+name: Contribute a dataset
+description: Offer experimental or synthetic quench / boiling data for QF-Bench
+labels: [dataset]
+body:
+  - type: textarea
+    id: desc
+    attributes:
+      label: Experiment description
+      description: Material, plate size, initial temperature, jet/spray parameters, plate speed, IR camera, frame rate, emissivity calibration.
+    validations:
+      required: true
+  - type: dropdown
+    id: rights
+    attributes:
+      label: Do you have the right to publish these data under CC BY 4.0?
+      options: ["Yes", "Need to check with my institution"]
+    validations:
+      required: true

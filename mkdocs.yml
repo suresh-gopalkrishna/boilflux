@@ -1,0 +1,108 @@
+site_name: QuenchFlux
+site_description: Open inverse heat transfer for boiling and quenching
+site_url: https://quenchflux.github.io/quenchflux/
+repo_url: https://github.com/quenchflux/quenchflux
+repo_name: quenchflux/quenchflux
+edit_uri: edit/main/docs/
+copyright: >
+  Code: MIT licence · Documentation and data: CC BY 4.0 · © 2026 Suresh Babu Gopalkrishna and the QuenchFlux contributors
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - assets/extra.css
+
+extra_javascript:
+  - assets/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Theory:
+      - theory/index.md
+      - Moving-plate formulation: theory/moving-plate.md
+      - Adjoint CGM: theory/adjoint-cgm.md
+  - User guide:
+      - user-guide/index.md
+      - Data and IR cameras: user-guide/data.md
+      - Materials: user-guide/materials.md
+      - Command line: user-guide/cli.md
+      - Python API: user-guide/api.md
+  - Boiling physics:
+      - physics/index.md
+      - Nucleate boiling, CHF, DNB: physics/nucleate-chf.md
+      - Transition, Leidenfrost, film: physics/leidenfrost-film.md
+      - Quenching and rewetting: physics/quenching.md
+      - Regime analysis: physics/regime-analysis.md
+  - Boiling flow:
+      - CFD, OpenFOAM, PINNs, neural operators: physics/modelling.md
+      - Neural-operator prototype: physics/neural-operators.md
+  - QF-Bench: benchmark.md
+  - Landscape: landscape.md
+  - Roadmap: roadmap.md
+  - Community:
+      - Contributing: community/contributing.md
+      - Cite QuenchFlux: community/citing.md
+      - Licence: community/license.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/quenchflux/quenchflux
+  generator: false

@@ -1,0 +1,59 @@
+# Python API
+
+All public objects are importable from the top-level package: `import quenchflux as qf`.
+
+## Geometry and materials
+
+`qf.PlateGrid(Lx, Ly, Lz, nx, ny, nz)`
+:   Uniform cell-centred grid. Properties: `dx, dy, dz, x, y, z, shape, face_shape, n_cells`.
+    `refined(f)` returns a refined grid and `coarsen_face(field, f)` block-averages face fields.
+
+`qf.Material(name, T_table, k_table, rho_table, cp_table)`
+:   Methods `k(T)`, `rho(T)`, `cp(T)`, `rho_cp(T)`, `diffusivity(T)`. Constructors
+    `Material.constant(...)` and `Material.from_csv(path)`. Built-ins via `qf.get_material(name)`.
+
+## Kinematics
+
+`qf.PlateMotion(velocity=0.0, x0=0.0)`
+:   `offset(t)`, `lab_to_plate(X, t)`, `plate_to_lab(x, t)`, `stagnation_point(X_jet, t)`,
+    `view_mask(grid, t, (Xmin, Xmax))`.
+
+`qf.lab_frames_to_plate(frames, X_px, Y_px, t, grid, motion, y_offset=0.0) -> (Y, mask)`
+:   Resample lab-frame IR frames onto the plate grid.
+
+## Forward model
+
+`qf.ForwardModel(grid, material, dt, nt, T0, top_loss=None, solver="auto")`
+:   `run(q=...)` or `run(flux_fn=...)` returns a `Trajectory` (`T`, `q`, `t`, `top_face()`,
+    `bottom_cell()`, `field(n)`). `sensitivity(traj, dq)` and `adjoint(traj, weighted_residual)`
+    are the linearised operators used by the inverse solver.
+
+`qf.SurfaceLoss(h=10.0, emissivity=0.9, T_amb=25.0)`
+:   Convection and radiation on the IR face.
+
+## Data
+
+`qf.QuenchDataset(grid, material, dt, T0, Y, mask=None, sigma=None, q_true=None, motion=..., meta={})`
+:   `save(path)` and `QuenchDataset.load(path)`; properties `nt`, `t`.
+
+`qf.JetQuenchScenario(...)`
+:   Synthetic single-jet scenario; `generate()` returns a `QuenchDataset` with `q_true`.
+
+`qf.SpechtBoilingCurve(q_max, T_dnb, q_leid, T_leid, T_f, Q_dot)`
+:   Callable boiling curve; `flux_and_derivative(Ts)`. Defaults `qf.IZ_DEFAULT`, `qf.FFZ_DEFAULT`.
+
+## Inverse solver
+
+`qf.AdjointCGM(data, material=None, top_loss=None, options=CGMOptions())`
+:   `solve(p0=None, callback=None) -> InverseResult`; `end_effect_frames()`.
+
+`qf.CGMOptions(max_iter=200, gamma=0.0, tau=1.02, stop_on_discrepancy=True, rel_tol=1e-7, beta="polak-ribiere")`
+
+`qf.InverseResult`
+:   `q`, `T_top`, `T_surface`, `trajectory`, `history` (`misfit`, `rms`, `alpha`), `sigma`,
+    `converged`, `message`, `runtime_s`, `reliable` (time slice), `save(path)`.
+
+## Utilities
+
+`qf.estimate_noise_sigma(Y, mask=None)`, `qf.flux_metrics(q_est, q_true)`,
+`quenchflux.plotting.save_all(data, result, outdir)`, `quenchflux.benchmarks.run_case(name)`.

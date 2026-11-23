@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+site/
+quenchflux_demo/
+quenchflux_bench/
+quenchflux_result/
+*.npz
+!benchmarks/reference/*.npz
+.venv/
+.DS_Store

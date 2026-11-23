@@ -1,0 +1,14 @@
+name: Feature or method request
+description: Propose a new inverse method, model feature or benchmark case
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like QuenchFlux to do?
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: References (papers, DOIs, existing code)

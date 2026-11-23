@@ -1,0 +1,26 @@
+{
+  "training": {
+    "n_samples": 1180,
+    "train_files": [
+      "/home/claude/bubbleml/sb_fc72_T87.npz",
+      "/home/claude/bubbleml/sb_fc72_T91.npz",
+      "/home/claude/bubbleml/sb_fc72_T96.npz",
+      "/home/claude/bubbleml/sb_fc72_T103.npz"
+    ],
+    "train_time_s": 1232.474043945,
+    "n_params": 1186884
+  },
+  "final_loss": 0.008632820879889501,
+  "evaluation": [
+    {
+      "wall_temp": 94.0,
+      "steps": 80,
+      "rel_l2_T_first5": 0.05334221571683884,
+      "rel_l2_T_all": 0.16050322353839874,
+      "rel_l2_u_all": 0.26787254214286804,
+      "rel_l2_v_all": 0.20461764931678772,
+      "iou_vapour_mean": 0.8696817988383568,
+      "wall_heat_flux_mean_rel_err": 0.036394793540239334
+    }
+  ]
+}

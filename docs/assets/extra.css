@@ -1,0 +1,54 @@
+:root {
+  --md-primary-fg-color: #0f2742;
+  --md-primary-fg-color--light: #1d3d63;
+  --md-primary-fg-color--dark: #0a1b2e;
+  --md-accent-fg-color: #f26b1d;
+  --qf-hot: #f26b1d;
+  --qf-cool: #4cc3ff;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0f2742;
+  --md-default-bg-color: #0d1520;
+  --md-accent-fg-color: #ff8a3d;
+}
+.md-typeset h1, .md-typeset h2 { font-weight: 700; letter-spacing: -0.01em; }
+
+/* Landing hero */
+.qf-hero {
+  margin: -1.2rem -1.2rem 2rem;
+  padding: 3.2rem 2rem 2.6rem;
+  border-radius: 0 0 14px 14px;
+  color: #fff;
+  background:
+    radial-gradient(1200px 300px at 110% 120%, rgba(242,107,29,.55), transparent 60%),
+    radial-gradient(800px 260px at -10% -20%, rgba(76,195,255,.35), transparent 60%),
+    linear-gradient(135deg, #0a1b2e 0%, #0f2742 55%, #1d3d63 100%);
+}
+.qf-hero h1 { color: #fff; font-size: 2.4rem; margin: 0 0 .4rem; }
+.qf-hero .qf-tagline { font-size: 1.15rem; max-width: 46rem; opacity: .92; line-height: 1.5; }
+.qf-hero .md-button { margin: 1.2rem .6rem 0 0; }
+.qf-hero .md-button--primary { background: var(--qf-hot); border-color: var(--qf-hot); color: #fff; }
+.qf-hero .md-button:not(.md-button--primary) { color: #fff; border-color: rgba(255,255,255,.6); }
+.qf-badges { margin-top: 1rem; font-size: .75rem; opacity: .85; letter-spacing: .03em; }
+.qf-badges span {
+  display: inline-block; padding: .15rem .55rem; margin: 0 .35rem .35rem 0;
+  border: 1px solid rgba(255,255,255,.35); border-radius: 999px;
+}
+
+/* Feature cards */
+.qf-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 1.2rem 0 2rem; }
+.qf-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px; padding: 1rem 1.1rem;
+  background: var(--md-default-bg-color);
+  transition: border-color .15s ease, transform .15s ease;
+}
+.qf-card:hover { border-color: var(--md-accent-fg-color); transform: translateY(-2px); }
+.qf-card h3 { margin: .2rem 0 .4rem; font-size: 1rem; }
+.qf-card p { margin: 0; font-size: .8rem; color: var(--md-default-fg-color--light); }
+.qf-card .qf-icon { font-size: 1.4rem; color: var(--md-accent-fg-color); }
+
+.qf-figure img { border-radius: 10px; border: 1px solid var(--md-default-fg-color--lightest); background: #fff; }
+.qf-figure figcaption { font-size: .75rem; color: var(--md-default-fg-color--light); }
+.qf-score td, .qf-score th { text-align: right; }
+.qf-score td:first-child, .qf-score th:first-child { text-align: left; }

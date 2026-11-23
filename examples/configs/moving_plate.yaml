@@ -1,0 +1,22 @@
+# quenchflux synth examples/configs/moving_plate.yaml -o dataset.npz
+scenario:
+  material: AA6082
+  Lx: 0.120          # plate length [m] (direction of motion)
+  Ly: 0.060          # plate width [m]
+  Lz: 0.005          # thickness [m]
+  nx: 48
+  ny: 24
+  nz: 5
+  dt: 0.01           # IR frame interval [s]
+  nt: 200
+  T0: 500.0          # initial temperature [degC]
+  plate_velocity: 0.010   # [m/s], 0 = stationary plate
+  x_jet_lab: 0.045        # jet axis in the lab frame [m]
+  r_iz: 0.009             # impingement-zone radius [m]
+  r_ffz: 0.011            # start of the free-flow zone [m]
+  r_wet: 0.035            # radius of the liquid-covered region [m]
+  noise_sigma: 2.0        # IR noise [K]
+  refine: 2               # data generated on a 2x finer grid (no inverse crime)
+  seed: 0
+  iz:  {q_max: 6.5e6, T_dnb: 200.0, q_leid: 2.0e6, T_leid: 450.0, T_f: 20.0, Q_dot: 100.0}
+  ffz: {q_max: 3.5e6, T_dnb: 200.0, q_leid: 1.0e6, T_leid: 350.0, T_f: 20.0, Q_dot: 100.0}

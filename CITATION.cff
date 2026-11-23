@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use QuenchFlux, please cite the software and the method paper below."
+title: "QuenchFlux: open inverse heat transfer for boiling and quenching"
+type: software
+version: 0.1.0
+date-released: 2026-11-23
+license: MIT
+repository-code: "https://github.com/quenchflux/quenchflux"
+url: "https://quenchflux.github.io/quenchflux"
+keywords:
+  - inverse heat conduction problem
+  - quenching
+  - boiling heat transfer
+  - infrared thermography
+  - adjoint method
+  - conjugate gradient method
+authors:
+  - family-names: Gopalkrishna
+    given-names: Suresh Babu
+    affiliation: "Integrated Thermal Research Private Limited"
+preferred-citation:
+  type: article
+  title: "Inverse heat conduction method to estimate heat flux during quenching of hot metals with infrared thermography measurements"
+  authors:
+    - family-names: Gopalkrishna
+      given-names: Suresh Babu
+    - family-names: Nallathambi
+      given-names: Ashok Kumar
+    - family-names: Specht
+      given-names: Eckehard
+  journal: "Applied Thermal Engineering"
+  volume: 304
+  start: 132481
+  year: 2026
+  doi: "10.1016/j.applthermaleng.2026.132481"
