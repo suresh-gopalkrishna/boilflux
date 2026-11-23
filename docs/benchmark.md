@@ -1,6 +1,6 @@
-# QF-Bench
+# BF-Bench
 
-QF-Bench is a set of reproducible inverse-problem cases for boiling and quenching with known ground
+BF-Bench is a set of reproducible inverse-problem cases for boiling and quenching with known ground
 truth. Any method can be scored on it against the same data.
 
 ## Tiers
@@ -30,7 +30,7 @@ to create data (no inverse crime).
 Scores are computed on the frames before the end-time window: R², RMSE [MW/m²], MAPE [%] over points
 where \(|q| > 5\%\) of the maximum, and the relative error of the maximum heat flux (MHF).
 
-<div class="qf-score" markdown>
+<div class="bf-score" markdown>
 
 | Case | Method | R² | RMSE | MAPE % | MHF % | iterations | time [s] |
 |---|---|---:|---:|---:|---:|---:|---:|
@@ -41,23 +41,23 @@ where \(|q| > 5\%\) of the maximum, and the relative error of the maximum heat f
 
 </div>
 
-Laptop-class CPU (2 cores), QuenchFlux 0.1.0, default `CGMOptions` (τ = 1.02, γ = 0). The MHF error is a
+Laptop-class CPU (2 cores), BoilFlux 0.1.0, default `CGMOptions` (τ = 1.02, γ = 0). The MHF error is a
 single-point maximum, so it is sensitive to noise. The 3D cases overshoot because noise-driven
 oscillations add to the sharp moving peak.
 
-<figure class="qf-figure" markdown>
+<figure class="bf-figure" markdown>
 ![Flux maps](assets/figures/flux_maps.png)
 <figcaption><code>M3D-AA6082</code>: true (top) and recovered (bottom) heat flux on the quenched face at four
 instants.</figcaption>
 </figure>
 
-<figure class="qf-figure" markdown>
+<figure class="bf-figure" markdown>
 ![Histories](assets/figures/histories.png)
 <figcaption>Heat-flux histories at points along the jet path (solid: truth; dashed: recovered). The grey
 band is the end-time window, excluded from the scores.</figcaption>
 </figure>
 
-<figure class="qf-figure" markdown>
+<figure class="bf-figure" markdown>
 ![Nickel](assets/figures/ni/centerline_xt.png)
 <figcaption><code>M3D-Ni</code>: the rewetting front develops ahead of the moving jet only after about 2 s of film
 boiling.</figcaption>
@@ -66,11 +66,11 @@ boiling.</figcaption>
 ## Run it yourself
 
 ```bash
-quenchflux bench                       # all cases, figures in ./quenchflux_bench/<case>/
-quenchflux bench --case M3D-Ni
+boilflux bench                       # all cases, figures in ./boilflux_bench/<case>/
+boilflux bench --case M3D-Ni
 ```
 
 ## Submitting a method
 
 Open a pull request that adds your method behind the common interface (dataset in, `q(t, y, x)` out)
-together with its scores from `quenchflux bench`. Methods must not be tuned on the scored cases.
+together with its scores from `boilflux bench`. Methods must not be tuned on the scored cases.

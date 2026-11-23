@@ -17,7 +17,7 @@ from dataclasses import asdict, dataclass, field
 import numpy as np
 
 from .boiling import FFZ_DEFAULT, IZ_DEFAULT, SpechtBoilingCurve
-from .dataset import QuenchDataset
+from .dataset import BoilDataset
 from .forward import ForwardModel, SurfaceLoss
 from .grid import PlateGrid
 from .kinematics import PlateMotion
@@ -92,7 +92,7 @@ class JetQuenchScenario:
 
         return law
 
-    def generate(self) -> QuenchDataset:
+    def generate(self) -> BoilDataset:
         """Run the fine-grid forward model and return a noisy coarse-grid dataset."""
         mat = get_material(self.material)
         grid = self.grid
@@ -120,8 +120,8 @@ class JetQuenchScenario:
         meta = {k: v for k, v in asdict(self).items() if k not in ("iz", "ffz")}
         meta["iz"] = self.iz.to_dict()
         meta["ffz"] = self.ffz.to_dict()
-        meta["generator"] = "quenchflux.synthetic.JetQuenchScenario"
-        return QuenchDataset(
+        meta["generator"] = "boilflux.synthetic.JetQuenchScenario"
+        return BoilDataset(
             grid=grid, material=self.material, dt=self.dt, T0=self.T0, Y=Y, mask=mask,
             sigma=self.noise_sigma, q_true=q_true, Y_clean=Y_clean, motion=self.motion, meta=meta,
         )

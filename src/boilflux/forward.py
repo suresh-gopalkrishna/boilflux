@@ -17,7 +17,7 @@ through the quenched face ``z = 0`` (as in the ATE 2026 paper).
 
 Because every step is affine in ``T^n`` with coefficients frozen at the stored
 trajectory, the exact discrete adjoint and sensitivity problems of the
-linearised map are available (see :mod:`quenchflux.inverse.cgm`).
+linearised map are available (see :mod:`boilflux.inverse.cgm`).
 """
 
 from __future__ import annotations

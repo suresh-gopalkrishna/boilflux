@@ -1,4 +1,4 @@
-# quenchflux invert dataset.npz -c examples/configs/invert.yaml -o result/
+# boilflux invert dataset.npz -c examples/configs/invert.yaml -o result/
 cgm:
   max_iter: 200
   tau: 1.02            # discrepancy-principle safety factor

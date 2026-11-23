@@ -2,7 +2,7 @@
 
 ## The dataset format
 
-A `QuenchDataset` stores IR-face temperatures on the plate-frame grid:
+A `BoilDataset` stores IR-face temperatures on the plate-frame grid:
 
 | Field | Shape / type | Meaning |
 |---|---|---|
@@ -18,7 +18,7 @@ A `QuenchDataset` stores IR-face temperatures on the plate-frame grid:
 | `meta` | dict | free-form metadata (e.g. `x_jet_lab`) |
 
 Datasets are saved as compressed `.npz` files with a JSON header (`dataset.save(path)`,
-`QuenchDataset.load(path)`), so they can be read without QuenchFlux.
+`BoilDataset.load(path)`), so they can be read without BoilFlux.
 
 ## From an IR camera
 

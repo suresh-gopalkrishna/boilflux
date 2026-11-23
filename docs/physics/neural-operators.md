@@ -14,13 +14,13 @@ interface. It then predicts the **heater heat flux** for a heater temperature it
 | training | 87, 91, 96, 103 °C | 300 per simulation (every 2nd output, t = 120–240) |
 | test (held out) | **94 °C** | rollout of 80 steps (32 time units) |
 
-Fields are block-averaged from 288 × 192 to 96 × 64 cells. `quenchflux.operators.bubbleml` reads only the
+Fields are block-averaged from 288 × 192 to 96 × 64 cells. `boilflux.operators.bubbleml` reads only the
 requested frames directly from Hugging Face with HTTP range requests (about 20 MB per simulation
 instead of 3.5 GB).
 
 !!! warning "Licence of the data"
     BubbleML 2.0 is distributed under **CC BY-NC-SA 4.0**. The data, and models trained on them,
-    are for non-commercial research only. QuenchFlux redistributes neither. It ships only the code that
+    are for non-commercial research only. BoilFlux redistributes neither. It ships only the code that
     downloads the data and trains the model.
 
 ## Model
@@ -38,7 +38,7 @@ to reduce error accumulation, and double weight on the interface channel. Traini
 
 ## Results on the held-out heater temperature (94 °C)
 
-<figure class="qf-figure" markdown>
+<figure class="bf-figure" markdown>
 ![Rollout snapshots](../assets/figures/operators/rollout_snapshots.png)
 <figcaption>Temperature (colour) and liquid–vapour interface (cyan) from the simulation (top) and the
 autoregressive FNO rollout (bottom) for the unseen heater temperature. The operator reproduces bubble
@@ -46,7 +46,7 @@ growth at the nucleation site, necking, departure and the rising detached bubble
 cycles.</figcaption>
 </figure>
 
-<figure class="qf-figure" markdown>
+<figure class="bf-figure" markdown>
 ![Heat flux and errors](../assets/figures/operators/rollout_heatflux_error.png)
 <figcaption>Left: heater heat flux (dimensionless near-wall gradient) from simulation and rollout. The
 peaks at bubble departure, when cold liquid rewets the dry spot ("transient-conduction quenching"), are
@@ -72,19 +72,19 @@ Errors are relative to the deviation of each field from its mean, which is a str
   [roadmap](../roadmap.md).
 - This is **pool nucleate boiling** at a few kelvin of superheat. The quench regime (film and
   transition boiling, rewetting fronts at hundreds of kelvin) needs its own training data. The plan is to generate it with
-  OpenFOAM conjugate-heat-transfer simulations of jet quenching and validate it against QuenchFlux
+  OpenFOAM conjugate-heat-transfer simulations of jet quenching and validate it against BoilFlux
   reconstructions (see [Modelling](modelling.md)).
 
 ## Reproduce
 
 ```bash
-pip install "quenchflux[ml]"
+pip install "boilflux[ml]"
 python examples/03_boiling_flow_fno.py --out fno_run --epochs 25
 ```
 
 ```python
-from quenchflux.operators.bubbleml import fetch_simulation
-from quenchflux.operators.train import TrainConfig, train_surrogate, evaluate_rollout, plot_rollout
+from boilflux.operators.bubbleml import fetch_simulation
+from boilflux.operators.train import TrainConfig, train_surrogate, evaluate_rollout, plot_rollout
 
 files = [fetch_simulation("SingleBubble-Saturated-FC72-2D", T, f"T{T}.npz") for T in (87, 91, 96, 103)]
 model, info = train_surrogate(files, TrainConfig(epochs=25))

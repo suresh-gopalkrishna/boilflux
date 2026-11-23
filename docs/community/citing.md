@@ -1,6 +1,6 @@
-# Cite QuenchFlux
+# Cite BoilFlux
 
-If QuenchFlux contributes to your work, please cite the method paper and the software version you used.
+If BoilFlux contributes to your work, please cite the method paper and the software version you used.
 
 **Method**
 
@@ -27,11 +27,11 @@ Each release is archived on Zenodo with its own DOI. GitHub's *Cite this reposit
 (generated from `CITATION.cff`) gives the current reference.
 
 ```bibtex
-@software{QuenchFlux,
-  author  = {Gopalkrishna, Suresh Babu and {QuenchFlux contributors}},
-  title   = {QuenchFlux: open inverse heat transfer for boiling and quenching},
+@software{BoilFlux,
+  author  = {Gopalkrishna, Suresh Babu and {BoilFlux contributors}},
+  title   = {BoilFlux: open inverse heat transfer for boiling and quenching},
   year    = {2026},
   version = {0.1.0},
-  url     = {https://github.com/quenchflux/quenchflux}
+  url     = {https://github.com/boilflux/boilflux}
 }
 ```

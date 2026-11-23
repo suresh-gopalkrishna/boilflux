@@ -1,5 +1,5 @@
 name: Contribute a dataset
-description: Offer experimental or synthetic quench / boiling data for QF-Bench
+description: Offer experimental or synthetic quench / boiling data for BF-Bench
 labels: [dataset]
 body:
   - type: textarea

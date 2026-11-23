@@ -3,8 +3,8 @@
 Run:  python examples/01_moving_plate_quickstart.py
 """
 
-import quenchflux as qf
-from quenchflux.plotting import save_all
+import boilflux as qf
+from boilflux.plotting import save_all
 
 # 1) A single round water jet on an AA6082 plate (120 x 60 x 5 mm) moving at 10 mm/s.
 scenario = qf.JetQuenchScenario(

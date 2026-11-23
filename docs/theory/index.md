@@ -46,7 +46,7 @@ J(q) = \frac12 \sum_{n=1}^{N_t}\sum_{i} m_{n,i}\,\big(T(\mathbf x_i, t_n; q) - Y
 where \(m_{n,i}\in\{0,1\}\) is the observation mask (camera field of view, bad pixels). This is the
 3D, moving-plate generalisation of Eq. (25) of the reference paper. The problem is ill-posed:
 conduction smooths high-frequency content of \(q\) exponentially before it reaches \(\Gamma_c\), so
-regularisation is essential. QuenchFlux uses **iterative regularisation**: conjugate-gradient iterations stopped by
+regularisation is essential. BoilFlux uses **iterative regularisation**: conjugate-gradient iterations stopped by
 Morozov's discrepancy principle, optionally combined with zeroth-order Tikhonov regularisation (\(\gamma>0\)).
 
 Details: [Adjoint CGM](adjoint-cgm.md).

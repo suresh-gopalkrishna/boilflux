@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "quenchflux"
+name = "boilflux"
 version = "0.1.0"
 description = "Open inverse heat transfer for boiling and quenching: 3D adjoint-CGM heat-flux reconstruction from infrared thermography on moving plates."
 readme = "README.md"
@@ -30,13 +30,13 @@ docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.5,<10"]
 ml = ["torch>=2.2", "h5py>=3.9", "fsspec>=2023.6", "aiohttp>=3.9", "requests>=2.31"]
 
 [project.scripts]
-quenchflux = "quenchflux.cli:main"
+boilflux = "boilflux.cli:main"
 
 [project.urls]
-Homepage = "https://quenchflux.github.io/quenchflux"
-Documentation = "https://quenchflux.github.io/quenchflux"
-Repository = "https://github.com/quenchflux/quenchflux"
-Issues = "https://github.com/quenchflux/quenchflux/issues"
+Homepage = "https://boilflux.github.io/boilflux"
+Documentation = "https://boilflux.github.io/boilflux"
+Repository = "https://github.com/boilflux/boilflux"
+Issues = "https://github.com/boilflux/boilflux/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

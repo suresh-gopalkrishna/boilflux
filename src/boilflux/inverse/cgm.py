@@ -34,7 +34,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-from ..dataset import QuenchDataset
+from ..dataset import BoilDataset
 from ..forward import ForwardModel, SurfaceLoss, Trajectory
 from ..materials import Material, get_material
 from ..noise import estimate_noise_sigma
@@ -88,7 +88,7 @@ class AdjointCGM:
     Parameters
     ----------
     data:
-        :class:`~quenchflux.dataset.QuenchDataset` with IR-face temperatures.
+        :class:`~boilflux.dataset.BoilDataset` with IR-face temperatures.
     material:
         Overrides ``data.material`` (useful for user-defined property tables).
     top_loss:
@@ -99,7 +99,7 @@ class AdjointCGM:
 
     def __init__(
         self,
-        data: QuenchDataset,
+        data: BoilDataset,
         material: Material | None = None,
         top_loss: SurfaceLoss | None = None,
         options: CGMOptions | None = None,

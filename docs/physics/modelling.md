@@ -2,7 +2,7 @@
 
 The inverse solution gives the plate-scale heat flux. Explaining it, and predicting it for new
 conditions, requires a model of the **two-phase flow**: the liquid film, vapour, bubbles and the
-wetting front. This page maps the modelling options and shows how they connect to QuenchFlux.
+wetting front. This page maps the modelling options and shows how they connect to BoilFlux.
 
 ## 1. Interface-resolving CFD (DNS-like)
 
@@ -55,7 +55,7 @@ departure diameter and frequency. The OpenFOAM Foundation release implements thi
 
 These models are calibrated for **subcooled flow boiling below CHF**. Post-CHF, transition and film boiling
 and quench fronts need additional regime maps or interfacial-area models. That is exactly the regime
-where QuenchFlux reconstructions provide **measurement-based closure data**: \(q_w(T_w)\) maps per zone.
+where BoilFlux reconstructions provide **measurement-based closure data**: \(q_w(T_w)\) maps per zone.
 
 ## 3. Physics-informed neural networks (PINNs)
 
@@ -68,8 +68,8 @@ networks (PIKANs). For **two-phase flow** the difficulties are well known:
 - stiff, multi-scale loss balancing (mass, momentum, energy, interface conditions)
 - one costly training per case, so there is no reuse across conditions
 
-In QuenchFlux, PINNs are planned as a **baseline** for the conduction inverse problem, compared
-against adjoint CGM on QF-Bench, rather than as the flow solver.
+In BoilFlux, PINNs are planned as a **baseline** for the conduction inverse problem, compared
+against adjoint CGM on BF-Bench, rather than as the flow solver.
 
 ## 4. Neural operators
 
@@ -89,14 +89,14 @@ Known challenges are **error accumulation in rollouts** (mitigated by multi-step
 training and noise injection), **stochastic nucleation** (no deterministic model can predict exactly when a
 bubble nucleates), and **generalisation** to unseen fluids, heater temperatures and geometries.
 
-## How the pieces fit together in QuenchFlux
+## How the pieces fit together in BoilFlux
 
 ```mermaid
 flowchart TB
   subgraph Measurement
     IR[Back-face IR thermography]
   end
-  subgraph Inverse["Inverse (QuenchFlux core)"]
+  subgraph Inverse["Inverse (BoilFlux core)"]
     CGM[3D adjoint CGM] --> Q["q(x,y,t), T_s(x,y,t)"]
     Q --> REG["Regime analysis: q_max, T_DNB, T_Leid, wetting front"]
   end

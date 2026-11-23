@@ -1,4 +1,4 @@
-# Contributing to QuenchFlux
+# Contributing to BoilFlux
 
 Thank you for helping build open tools for inverse boiling heat transfer. Contributions of code,
 benchmark cases, experimental datasets, documentation and bug reports are all welcome.
@@ -16,8 +16,8 @@ benchmark cases, experimental datasets, documentation and bug reports are all we
 ## Development setup
 
 ```bash
-git clone https://github.com/quenchflux/quenchflux.git
-cd quenchflux
+git clone https://github.com/boilflux/boilflux.git
+cd boilflux
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev,docs]"
 pytest              # run the test suite

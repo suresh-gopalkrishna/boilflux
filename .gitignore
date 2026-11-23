@@ -8,9 +8,9 @@ dist/
 .coverage
 htmlcov/
 site/
-quenchflux_demo/
-quenchflux_bench/
-quenchflux_result/
+boilflux_demo/
+boilflux_bench/
+boilflux_result/
 *.npz
 !benchmarks/reference/*.npz
 .venv/

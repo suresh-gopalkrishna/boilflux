@@ -1,4 +1,4 @@
-# quenchflux synth examples/configs/moving_plate.yaml -o dataset.npz
+# boilflux synth examples/configs/moving_plate.yaml -o dataset.npz
 scenario:
   material: AA6082
   Lx: 0.120          # plate length [m] (direction of motion)

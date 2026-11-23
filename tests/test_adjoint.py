@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-import quenchflux as qf
+import boilflux as qf
 
 
 def setup(material):

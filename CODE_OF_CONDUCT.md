@@ -1,6 +1,6 @@
 # Code of Conduct
 
-QuenchFlux is a scientific community project. We want it to be welcoming to researchers,
+BoilFlux is a scientific community project. We want it to be welcoming to researchers,
 engineers and students of every background and level of experience.
 
 ## Expected behaviour
@@ -18,7 +18,7 @@ engineers and students of every background and level of experience.
 
 ## Enforcement
 
-Report concerns privately to the maintainers at **quenchflux@itr-research.example** (replace with
+Report concerns privately to the maintainers at **boilflux@itr-research.example** (replace with
 the project contact address). Maintainers will review every report, keep it confidential, and may
 warn, temporarily ban or permanently ban participants who violate this code.
 

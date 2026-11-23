@@ -11,13 +11,13 @@ import numpy as np
 from .grid import PlateGrid
 from .kinematics import PlateMotion
 
-__all__ = ["QuenchDataset"]
+__all__ = ["BoilDataset"]
 
 FORMAT_VERSION = "1.0"
 
 
 @dataclass
-class QuenchDataset:
+class BoilDataset:
     """IR-face temperature data on the plate-frame grid.
 
     Attributes
@@ -75,7 +75,7 @@ class QuenchDataset:
     def save(self, path: str | Path) -> Path:
         path = Path(path)
         header = {
-            "format": "quenchflux-dataset",
+            "format": "boilflux-dataset",
             "version": FORMAT_VERSION,
             "grid": self.grid.to_dict(),
             "material": self.material,
@@ -94,12 +94,12 @@ class QuenchDataset:
         return path if path.suffix == ".npz" else path.with_suffix(path.suffix + ".npz")
 
     @classmethod
-    def load(cls, path: str | Path) -> QuenchDataset:
+    def load(cls, path: str | Path) -> BoilDataset:
         with np.load(path, allow_pickle=False) as f:
             header = json.loads(str(f["header"]))
             arrays = {k: f[k] for k in f.files if k != "header"}
-        if header.get("format") != "quenchflux-dataset":
-            raise ValueError(f"{path} is not a QuenchFlux dataset")
+        if header.get("format") != "boilflux-dataset":
+            raise ValueError(f"{path} is not a BoilFlux dataset")
         return cls(
             grid=PlateGrid(**header["grid"]),
             material=header["material"],

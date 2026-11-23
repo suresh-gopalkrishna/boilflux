@@ -1,4 +1,4 @@
-"""Command-line interface: ``quenchflux <command>``.
+"""Command-line interface: ``boilflux <command>``.
 
 Commands
 --------
@@ -29,7 +29,7 @@ def cmd_info(_args) -> int:
     from .benchmarks import CASES
     from .materials import MATERIALS
 
-    print(f"QuenchFlux {__version__}")
+    print(f"BoilFlux {__version__}")
     print("materials:", ", ".join(sorted({m.name for m in MATERIALS.values()})))
     print("benchmark cases:")
     for k, v in CASES.items():
@@ -75,14 +75,14 @@ def cmd_synth(args) -> int:
 
 
 def cmd_invert(args) -> int:
-    from .dataset import QuenchDataset
+    from .dataset import BoilDataset
     from .forward import SurfaceLoss
     from .inverse import AdjointCGM, CGMOptions
     from .materials import Material
     from .metrics import flux_metrics
 
     cfg = _load_yaml(args.config) if args.config else {}
-    data = QuenchDataset.load(args.dataset)
+    data = BoilDataset.load(args.dataset)
     opts = CGMOptions(**cfg.get("cgm", {}))
     mat = Material.from_csv(cfg["material_csv"]) if cfg.get("material_csv") else None
     loss = SurfaceLoss(**cfg["top_loss"]) if cfg.get("top_loss") else None
@@ -105,19 +105,19 @@ def cmd_invert(args) -> int:
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(
-        prog="quenchflux", description="Inverse heat transfer for boiling and quenching."
+        prog="boilflux", description="Inverse heat transfer for boiling and quenching."
     )
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("info", help="version, materials, benchmark cases").set_defaults(func=cmd_info)
 
     d = sub.add_parser("demo", help="run the 3D moving-plate example")
-    d.add_argument("--out", default="quenchflux_demo")
+    d.add_argument("--out", default="boilflux_demo")
     d.add_argument("--quiet", action="store_true")
     d.set_defaults(func=cmd_demo)
 
     b = sub.add_parser("bench", help="run benchmark cases")
     b.add_argument("--case", default="all")
-    b.add_argument("--out", default="quenchflux_bench")
+    b.add_argument("--out", default="boilflux_bench")
     b.add_argument("--no-plots", action="store_true")
     b.add_argument("--quiet", action="store_true")
     b.set_defaults(func=cmd_bench)
@@ -130,7 +130,7 @@ def main(argv=None) -> int:
     i = sub.add_parser("invert", help="invert a dataset")
     i.add_argument("dataset")
     i.add_argument("-c", "--config", default=None)
-    i.add_argument("-o", "--out", default="quenchflux_result")
+    i.add_argument("-o", "--out", default="boilflux_result")
     i.add_argument("--no-plots", action="store_true")
     i.set_defaults(func=cmd_invert)
 

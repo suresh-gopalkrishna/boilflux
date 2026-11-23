@@ -66,9 +66,9 @@ Rewetting requires \(T_i\) to fall below the liquid's superheat limit. A solid w
 (or a thin oxide or paint layer) cools at the surface on contact, so \(T_i\) drops and rewetting occurs
 at a *higher* wall temperature. A high-effusivity metal keeps \(T_i\) close to \(T_w\).
 
-<figure class="qf-figure" markdown>
+<figure class="bf-figure" markdown>
 ![Contact temperature](../assets/figures/physics/contact_temperature.png)
-<figcaption>Contact temperature with 20 °C water for the QuenchFlux materials. With metals, <i>T<sub>i</sub></i> stays
+<figcaption>Contact temperature with 20 °C water for the BoilFlux materials. With metals, <i>T<sub>i</sub></i> stays
 close to <i>T<sub>w</sub></i>, so rewetting requires the wall itself to approach the liquid's superheat limit, unless
 other effects (below) raise the apparent Leidenfrost temperature.</figcaption>
 </figure>
@@ -105,7 +105,7 @@ steeply as the wall cools, which explains the negative slope \(dq/dT_s < 0\).
 
 ## Reading these regimes in reconstructions
 
-| Feature | Signature in \(q(t)\), \(T_s(t)\) at a point | QuenchFlux quantity |
+| Feature | Signature in \(q(t)\), \(T_s(t)\) at a point | BoilFlux quantity |
 |---|---|---|
 | film boiling | long plateau of low \(q\) while \(T_s\) is high | `regime == FILM` |
 | rewetting / Leidenfrost | onset of the steep rise of \(q\) | `T_leid`, `t_wet` |

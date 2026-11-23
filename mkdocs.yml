@@ -1,11 +1,11 @@
-site_name: QuenchFlux
+site_name: BoilFlux
 site_description: Open inverse heat transfer for boiling and quenching
-site_url: https://quenchflux.github.io/quenchflux/
-repo_url: https://github.com/quenchflux/quenchflux
-repo_name: quenchflux/quenchflux
+site_url: https://boilflux.github.io/boilflux/
+repo_url: https://github.com/boilflux/boilflux
+repo_name: boilflux/boilflux
 edit_uri: edit/main/docs/
 copyright: >
-  Code: MIT licence · Documentation and data: CC BY 4.0 · © 2026 Suresh Babu Gopalkrishna and the QuenchFlux contributors
+  Code: MIT licence · Documentation and data: CC BY 4.0 · © 2026 Suresh Babu Gopalkrishna and the BoilFlux contributors
 
 theme:
   name: material
@@ -93,16 +93,16 @@ nav:
   - Boiling flow:
       - CFD, OpenFOAM, PINNs, neural operators: physics/modelling.md
       - Neural-operator prototype: physics/neural-operators.md
-  - QF-Bench: benchmark.md
+  - BF-Bench: benchmark.md
   - Landscape: landscape.md
   - Roadmap: roadmap.md
   - Community:
       - Contributing: community/contributing.md
-      - Cite QuenchFlux: community/citing.md
+      - Cite BoilFlux: community/citing.md
       - Licence: community/license.md
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/quenchflux/quenchflux
+      link: https://github.com/boilflux/boilflux
   generator: false

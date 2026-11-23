@@ -2,7 +2,7 @@
 
 | Part | Licence |
 |---|---|
-| Source code | [MIT](https://github.com/quenchflux/quenchflux/blob/main/LICENSE) |
+| Source code | [MIT](https://github.com/boilflux/boilflux/blob/main/LICENSE) |
 | Documentation and website text | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Benchmark and experimental datasets | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), each with a Zenodo DOI |
 

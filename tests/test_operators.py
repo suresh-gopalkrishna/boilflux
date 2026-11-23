@@ -5,8 +5,8 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from quenchflux.operators.fno import FNO2d  # noqa: E402
-from quenchflux.operators.train import (  # noqa: E402
+from boilflux.operators.fno import FNO2d  # noqa: E402
+from boilflux.operators.train import (  # noqa: E402
     BoilingSurrogate,
     TrainConfig,
     evaluate_rollout,

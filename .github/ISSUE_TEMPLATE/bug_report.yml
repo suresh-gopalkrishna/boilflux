@@ -16,5 +16,5 @@ body:
   - type: input
     id: version
     attributes:
-      label: QuenchFlux version and Python version
-      placeholder: "quenchflux 0.1.0, Python 3.12, Windows 11"
+      label: BoilFlux version and Python version
+      placeholder: "boilflux 0.1.0, Python 3.12, Windows 11"

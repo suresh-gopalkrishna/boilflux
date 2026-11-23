@@ -9,7 +9,7 @@
 | **Hydraulic jump / splashing** | film thickens abruptly or is ejected as droplets by vapour | weaker, irregular cooling |
 | **Free-flow zone (FFZ)** / beyond the front | liquid flows over a vapour film or falls under gravity | film boiling, low flux |
 
-In the QuenchFlux synthetic model these zones are represented by zone-dependent boiling curves (IZ, FFZ)
+In the BoilFlux synthetic model these zones are represented by zone-dependent boiling curves (IZ, FFZ)
 and a liquid-coverage radius. In the real flow they come from the momentum and mass balance of the
 spreading film, which is what [CFD and neural operators](modelling.md) try to predict.
 
@@ -41,7 +41,7 @@ When the plate moves under a stationary jet (run-out tables, strip cooling, movi
   motion and can stall when the plate speed equals the front speed in the plate frame.
 - A material point experiences a **sequence of regimes in time** that depends on its distance from the
   jet path, not only on its temperature.
-- The relevant frame for conduction is the plate frame. For the flow, it is the jet frame. QuenchFlux uses the plate
+- The relevant frame for conduction is the plate frame. For the flow, it is the jet frame. BoilFlux uses the plate
   frame for the inverse problem (see [moving-plate formulation](../theory/moving-plate.md)).
 
 ## Material and surface effects
@@ -68,5 +68,5 @@ strongly attenuated:
 | individual bubbles, microlayer, contact-line flux | **no**: needs front-face measurement (for example IR through a transparent heater) or interface-resolving CFD |
 | very fast transients (≪ \(s^2/\alpha\)) | only their time integral |
 
-These limits motivate the **combination** pursued in QuenchFlux: inverse reconstruction for the
+These limits motivate the **combination** pursued in BoilFlux: inverse reconstruction for the
 plate-scale flux, with flow models (CFD, neural operators) for the mechanisms below that scale.

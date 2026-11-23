@@ -1,11 +1,11 @@
-# Regime analysis in QuenchFlux
+# Regime analysis in BoilFlux
 
-`quenchflux.regimes` turns a reconstruction into physical results. At every surface point it
+`boilflux.regimes` turns a reconstruction into physical results. At every surface point it
 identifies the characteristic points of the local transient boiling curve and the regime sequence.
 
 ```python
-import quenchflux as qf
-from quenchflux.regimes import (extract_features, feature_maps, wetting_front,
+import boilflux as qf
+from boilflux.regimes import (extract_features, feature_maps, wetting_front,
                                 plot_boiling_curve_regimes, plot_feature_maps)
 
 res = qf.AdjointCGM(data).solve()

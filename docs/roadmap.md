@@ -1,6 +1,6 @@
 # Roadmap
 
-QuenchFlux is the software home of a long-term research programme on inverse boiling heat transfer.
+BoilFlux is the software home of a long-term research programme on inverse boiling heat transfer.
 Every method published in this programme is released here, with its benchmark scores.
 
 ## v0.1 (current)
@@ -8,7 +8,7 @@ Every method published in this programme is released here, with its benchmark sc
 - [x] Nonlinear 3D finite-volume forward model; the 2D model of the ATE 2026 paper as a special case
 - [x] Moving-plate formulation, camera field-of-view masks, IR frame resampling
 - [x] Adjoint CGM with Tikhonov regularisation and the discrepancy principle; adjoint verified against finite differences
-- [x] Specht boiling-curve synthetic generator and QF-Bench tier 2 cases
+- [x] Specht boiling-curve synthetic generator and BF-Bench tier 2 cases
 - [x] CLI, documentation website, CI
 - [x] Boiling-regime analysis (q_max, T_DNB, T_Leid, rewetting time, regime maps, wetting-front speed)
 - [x] Physics guide: nucleate boiling, CHF/DNB, transition, Leidenfrost, film boiling, quench rewetting
@@ -19,8 +19,8 @@ Every method published in this programme is released here, with its benchmark sc
 - [ ] Operator benchmark on BubbleML pool/flow boiling: FNO, U-Net, DeepONet, transformer; error growth and wall-flux statistics
 - [ ] Physics-constrained training (mass and energy conservation, interface jump conditions) and noise-injected rollouts
 - [ ] OpenFOAM jet-quench cases with conjugate heat transfer (VOF + phase change and Euler–Euler wall boiling), with case files and data generator
-- [ ] Operator surrogate of the **jet-quench** wall flux \(q_w(x,t)\) trained on OpenFOAM data and validated against QuenchFlux reconstructions
-- [ ] PINN/PIKAN baselines for the conduction inverse problem on QF-Bench
+- [ ] Operator surrogate of the **jet-quench** wall flux \(q_w(x,t)\) trained on OpenFOAM data and validated against BoilFlux reconstructions
+- [ ] PINN/PIKAN baselines for the conduction inverse problem on BF-Bench
 
 ## v0.2: baselines and validation
 
@@ -28,7 +28,7 @@ Every method published in this programme is released here, with its benchmark sc
 - [ ] Parametric boiling-curve inversion (\(q_\text{max}, T_\text{DNB}, T_\text{Leid}\)) with Levenberg–Marquardt
 - [ ] Thermocouple data with sensor-lag correction (embedded thermocouples)
 - [ ] First- and second-order (space-time) Tikhonov regularisation; L-curve and GCV
-- [ ] QF-Bench tier 1: analytic cases (Beck 1D, the Huang–Wang 3D plate)
+- [ ] BF-Bench tier 1: analytic cases (Beck 1D, the Huang–Wang 3D plate)
 
 ## v0.3: learned priors (paper B)
 
@@ -48,7 +48,7 @@ Every method published in this programme is released here, with its benchmark sc
 - [ ] Credible bands on \(q(x,y,t)\) and on derived boiling-curve features
 - [ ] Interfaces to hIPPYlib / CUQIpy
 
-## v1.0: open experimental data (QF-Bench tier 4)
+## v1.0: open experimental data (BF-Bench tier 4)
 
 - [ ] First public IR quench dataset on hot metal plates (stationary and moving), with metadata, DOI and CC BY 4.0
 - [ ] Leaderboard on the website; community submissions

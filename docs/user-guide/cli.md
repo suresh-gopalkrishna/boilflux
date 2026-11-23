@@ -1,11 +1,11 @@
 # Command line
 
 ```text
-quenchflux info                         version, materials, benchmark cases
-quenchflux demo   [--out DIR]           3D moving-plate example with figures
-quenchflux bench  [--case NAME|all]     run QF-Bench cases and print the score table
-quenchflux synth  CONFIG.yaml -o D.npz  generate a synthetic dataset
-quenchflux invert D.npz [-c CFG.yaml] [-o DIR]   reconstruct the heat flux
+boilflux info                         version, materials, benchmark cases
+boilflux demo   [--out DIR]           3D moving-plate example with figures
+boilflux bench  [--case NAME|all]     run BF-Bench cases and print the score table
+boilflux synth  CONFIG.yaml -o D.npz  generate a synthetic dataset
+boilflux invert D.npz [-c CFG.yaml] [-o DIR]   reconstruct the heat flux
 ```
 
 ## Scenario file (`synth`)

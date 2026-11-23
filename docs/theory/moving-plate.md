@@ -6,7 +6,7 @@ travels with velocity \(v\) along its length.
 
 ## Two possible frames
 
-| | Lab (Eulerian) frame | Plate (Lagrangian) frame (**QuenchFlux**) |
+| | Lab (Eulerian) frame | Plate (Lagrangian) frame (**BoilFlux**) |
 |---|---|---|
 | Governing equation | \(\rho c_p (\partial_t T + v\,\partial_x T) = \nabla\cdot(k\nabla T)\) | \(\rho c_p\,\partial_t T = \nabla\cdot(k\nabla T)\) |
 | Jet position | fixed | moves: \(x_s(t) = X_\text{jet} - X_0 - v t\) |
@@ -14,7 +14,7 @@ travels with velocity \(v\) along its length.
 | IR data | fixed pixels | resampled onto plate coordinates |
 | Numerical issues | advection-dominated for large Péclet numbers, upwinding, artificial inflow | none beyond the stationary case |
 
-QuenchFlux works in the **plate frame**. The physics is identical, but the discretisation stays
+BoilFlux works in the **plate frame**. The physics is identical, but the discretisation stays
 symmetric positive definite and the adjoint stays exact. Finite plates, plates entering and leaving
 the camera view, and start/stop motions are all handled without special cases.
 

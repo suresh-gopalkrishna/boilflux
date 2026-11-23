@@ -6,8 +6,8 @@ converted to temperature with your emissivity calibration.
 
 import numpy as np
 
-import quenchflux as qf
-from quenchflux.plotting import save_all
+import boilflux as qf
+from boilflux.plotting import save_all
 
 # ---- 1. load the IR sequence (lab frame) ------------------------------------
 frames = np.load("my_ir_frames.npy")            # (n_frames, n_py, n_px) in degC
@@ -24,7 +24,7 @@ material = qf.get_material("AA6082")                # or qf.Material.from_csv("m
 
 # ---- 3. map the frames onto the plate and build the dataset -----------------
 Y, mask = qf.lab_frames_to_plate(frames, X_px, Y_px, t, grid, motion)
-data = qf.QuenchDataset(grid=grid, material=material.name, dt=1 / fps, T0=float(frames[0].max()),
+data = qf.BoilDataset(grid=grid, material=material.name, dt=1 / fps, T0=float(frames[0].max()),
                         Y=Y, mask=mask, motion=motion,
                         meta={"x_jet_lab": 0.075, "experiment": "describe your test here"})
 print("estimated IR noise sigma [K]:", qf.estimate_noise_sigma(Y, mask))

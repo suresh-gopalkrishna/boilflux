@@ -1,6 +1,6 @@
-"""Reference benchmark cases (QF-Bench tier 2: synthetic nonlinear quench twins).
+"""Reference benchmark cases (BF-Bench tier 2: synthetic nonlinear quench twins).
 
-Each case is a :class:`~quenchflux.synthetic.JetQuenchScenario` with fixed
+Each case is a :class:`~boilflux.synthetic.JetQuenchScenario` with fixed
 parameters and seed, so scores are reproducible across machines. Scores are
 computed on the frames unaffected by the end-time effect.
 """
@@ -67,7 +67,7 @@ def run_case(name: str, outdir: str | Path | None = None, options: CGMOptions | 
     scores = flux_metrics(res.q[sl], data.q_true[sl])
     scores.update(case=name, iterations=len(res.history["alpha"]), converged=res.converged,
                   runtime_s=res.runtime_s, sigma_K=res.sigma,
-                  reliable_until_s=res.n_reliable * data.dt, method="adjoint-CGM (QuenchFlux)")
+                  reliable_until_s=res.n_reliable * data.dt, method="adjoint-CGM (BoilFlux)")
     if outdir is not None:
         out = Path(outdir) / name
         out.mkdir(parents=True, exist_ok=True)

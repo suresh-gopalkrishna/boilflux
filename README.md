@@ -1,20 +1,20 @@
 <p align="center">
-  <img src="docs/assets/logo.svg" width="96" alt="QuenchFlux logo">
+  <img src="docs/assets/logo.svg" width="96" alt="BoilFlux logo">
 </p>
 
-<h1 align="center">QuenchFlux</h1>
+<h1 align="center">BoilFlux</h1>
 
 <p align="center"><b>Open inverse heat transfer for boiling and quenching</b></p>
 
 <p align="center">
-  <a href="https://github.com/quenchflux/quenchflux/actions/workflows/ci.yml"><img src="https://github.com/quenchflux/quenchflux/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://quenchflux.github.io/quenchflux"><img src="https://img.shields.io/badge/docs-website-0f2742" alt="Docs"></a>
+  <a href="https://github.com/boilflux/boilflux/actions/workflows/ci.yml"><img src="https://github.com/boilflux/boilflux/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://boilflux.github.io/boilflux"><img src="https://img.shields.io/badge/docs-website-0f2742" alt="Docs"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-f26b1d" alt="MIT licence"></a>
   <img src="https://img.shields.io/badge/python-%E2%89%A53.10-4cc3ff" alt="Python 3.10+">
   <a href="https://doi.org/10.1016/j.applthermaleng.2026.132481"><img src="https://img.shields.io/badge/method-ATE%202026-555" alt="Method paper"></a>
 </p>
 
-QuenchFlux reconstructs the **transient, spatially resolved boiling heat flux** on the quenched face of
+BoilFlux reconstructs the **transient, spatially resolved boiling heat flux** on the quenched face of
 a hot (moving) metal plate from **infrared thermography of the opposite face**. It solves the nonlinear
 3D inverse heat conduction problem with the **adjoint conjugate-gradient method**, Tikhonov
 regularisation and the discrepancy principle.
@@ -41,7 +41,7 @@ regularisation and the discrepancy principle.
 - **Neural operators for boiling flow** (optional `[ml]` extra): a PyTorch Fourier neural operator trained
   on interface-resolved boiling simulations (BubbleML 2.0), with autoregressive rollouts and
   wall-heat-flux evaluation. This is the forward-flow counterpart of the inverse core.
-- **QF-Bench**: reproducible synthetic quench cases with known flux, generated on refined grids to avoid
+- **BF-Bench**: reproducible synthetic quench cases with known flux, generated on refined grids to avoid
   the inverse crime, with standard scores (R², RMSE, MAPE, maximum-heat-flux error).
 - **Light and tested**: depends only on NumPy, SciPy, Matplotlib and PyYAML; tests with analytic
   solutions, conservation laws and gradient checks; CI on Linux, macOS and Windows.
@@ -49,19 +49,19 @@ regularisation and the discrepancy principle.
 ## Install
 
 ```bash
-pip install quenchflux                                         # once released on PyPI
-pip install git+https://github.com/quenchflux/quenchflux.git  # latest
+pip install boilflux                                         # once released on PyPI
+pip install git+https://github.com/boilflux/boilflux.git  # latest
 ```
 
 ## Quick start
 
 ```bash
-quenchflux demo      # synthetic moving-plate quench -> inversion -> figures in ./quenchflux_demo
-quenchflux bench     # run all QF-Bench cases
+boilflux demo      # synthetic moving-plate quench -> inversion -> figures in ./boilflux_demo
+boilflux bench     # run all BF-Bench cases
 ```
 
 ```python
-import quenchflux as qf
+import boilflux as qf
 
 data = qf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.010).generate()
 result = qf.AdjointCGM(data).solve()
@@ -69,9 +69,9 @@ print(qf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
 ```
 
 To use your own camera data, see `examples/02_experimental_ir_template.py` and the
-[data guide](https://quenchflux.github.io/quenchflux/user-guide/data/).
+[data guide](https://boilflux.github.io/boilflux/user-guide/data/).
 
-## QF-Bench results (v0.1.0, adjoint CGM, σ = 2 K)
+## BF-Bench results (v0.1.0, adjoint CGM, σ = 2 K)
 
 | Case | Description | R² | RMSE [MW/m²] | MAPE [%] |
 |---|---|---:|---:|---:|
@@ -80,13 +80,13 @@ To use your own camera data, see `examples/02_experimental_ir_template.py` and t
 | `M3D-Ni` | 3D, plate moving at 5 mm/s, nickel, 800 °C | 0.965 | 0.25 | 10.0 |
 | `M3D-AA6082-window` | 3D, 20 mm/s, plate leaving the camera view | 0.974 | 0.16 | 9.6 |
 
-Scores are computed over the frames unaffected by the end-time effect. Reproduce them with `quenchflux bench`.
+Scores are computed over the frames unaffected by the end-time effect. Reproduce them with `boilflux bench`.
 
 ## Documentation
 
 Theory, **boiling physics guide** (nucleate boiling, CHF/DNB, transition boiling, Leidenfrost, film boiling,
 rewetting), CFD/OpenFOAM/PINN/neural-operator modelling, user guide, API, benchmark, related software and
-roadmap: **https://quenchflux.github.io/quenchflux**
+roadmap: **https://boilflux.github.io/boilflux**
 
 ## Citing
 
@@ -104,4 +104,4 @@ welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Licence
 
 Code: [MIT](LICENSE). Documentation and data: CC BY 4.0.
-© 2026 Suresh Babu Gopalkrishna and the QuenchFlux contributors.
+© 2026 Suresh Babu Gopalkrishna and the BoilFlux contributors.

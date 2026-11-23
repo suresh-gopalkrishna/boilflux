@@ -7,7 +7,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-import quenchflux as qf
+import boilflux as qf
 
 OUT = "docs/assets/figures/physics/"
 g = 9.81

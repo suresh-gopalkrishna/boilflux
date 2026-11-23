@@ -1,10 +1,10 @@
 # Boiling physics: the boiling curve
 
 A hot metal surface in contact with water passes through up to four heat-transfer regimes. Each one
-has a different mechanism and a heat flux that differs by orders of magnitude. QuenchFlux
+has a different mechanism and a heat flux that differs by orders of magnitude. BoilFlux
 reconstructs this boiling heat flux, so the physics below explains what its results show.
 
-<figure class="qf-figure" markdown>
+<figure class="bf-figure" markdown>
 ![Boiling curve with regimes](../assets/figures/physics/boiling_curve_regimes.png)
 <figcaption>Boiling curve of the impingement zone of a water jet (Specht parabolic model, parameters of
 the ATE 2026 paper). A quenched surface moves along it from right to left. Reproduce with
@@ -49,4 +49,4 @@ consequences matter for interpretation:
 - [Transition boiling, Leidenfrost and film boiling](leidenfrost-film.md): vapour-film stability, homogeneous nucleation, contact temperature, Berenson and Bromley
 - [Quenching and rewetting](quenching.md): jet zones, wetting-front propagation, moving plates, material effects, and what the inverse solution can resolve
 - [Modelling: CFD, OpenFOAM, PINNs and neural operators](modelling.md)
-- [Regime analysis in QuenchFlux](regime-analysis.md): extracting \(q_\text{max}, T_\text{DNB}, T_\text{Leid}\) and wetting fronts from reconstructions
+- [Regime analysis in BoilFlux](regime-analysis.md): extracting \(q_\text{max}, T_\text{DNB}, T_\text{Leid}\) and wetting fronts from reconstructions

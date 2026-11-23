@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-import quenchflux as qf
+import boilflux as qf
 
 
 def test_material_interpolation_and_csv(tmp_path):
@@ -57,7 +57,7 @@ def test_dataset_roundtrip(tmp_path):
     sc = qf.JetQuenchScenario(nx=8, ny=4, nz=3, nt=5, refine=1)
     ds = sc.generate()
     p = ds.save(tmp_path / "d.npz")
-    ds2 = qf.QuenchDataset.load(p)
+    ds2 = qf.BoilDataset.load(p)
     np.testing.assert_array_equal(ds.Y, ds2.Y)
     np.testing.assert_array_equal(ds.q_true, ds2.q_true)
     assert ds2.grid == ds.grid

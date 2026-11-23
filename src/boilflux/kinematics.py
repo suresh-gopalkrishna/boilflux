@@ -2,7 +2,7 @@
 
 In a moving-plate quench test the jet and the IR camera are fixed in the
 laboratory while the plate travels with velocity ``v`` along its length ``x``.
-QuenchFlux solves conduction in the *plate frame* (Lagrangian description), so
+BoilFlux solves conduction in the *plate frame* (Lagrangian description), so
 no advection term or artificial inflow boundary is needed. The price is that
 the jet stagnation point moves across the plate and the camera field of view
 becomes a time-dependent observation mask; both are handled here.

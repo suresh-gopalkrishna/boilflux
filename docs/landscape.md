@@ -1,7 +1,7 @@
 # Landscape: software and data for inverse boiling heat transfer
 
-This page lists the tools and datasets QuenchFlux relates to, so users can choose the right one and
-see where QuenchFlux fits. It is based on a literature and repository survey carried out in
+This page lists the tools and datasets BoilFlux relates to, so users can choose the right one and
+see where BoilFlux fits. It is based on a literature and repository survey carried out in
 November 2026. Corrections and additions are welcome through a pull request.
 
 !!! info "Summary"
@@ -41,7 +41,7 @@ November 2026. Corrections and additions are welcome through a pull request.
 CUQIpy (computational UQ for inverse problems), FEniCSx with
 dolfin-adjoint/pyadjoint, pyGIMLi, and SciML libraries (DeepXDE, NVIDIA PhysicsNeMo, neuraloperator).
 They are powerful, but none of them includes boiling curves, wetting fronts, IR-camera pipelines or quench
-benchmarks. QuenchFlux plans to interoperate with them (for example for UQ) rather than replace them.
+benchmarks. BoilFlux plans to interoperate with them (for example for UQ) rather than replace them.
 
 ## Datasets
 
@@ -51,11 +51,11 @@ benchmarks. QuenchFlux plans to interoperate with them (for example for UQ) rath
 | Szénási & Felde (Data, 2019) | synthetic 1D quench HTC curves with cooling histories | yes (synthetic 1D) |
 | [BubbleML](https://github.com/HPCForge/BubbleML), BubbleML 2.0 | simulations of pool, flow and subcooled boiling | forward; can be adapted |
 | Purdue HFE-7100 IR pool-boiling data | IR + phase maps, ITO-sapphire heater | listed as in preparation |
-| **Public IR quench data on hot metals** | — | **none found; QF-Bench tier 4 is planned to fill this gap** |
+| **Public IR quench data on hot metals** | — | **none found; BF-Bench tier 4 is planned to fill this gap** |
 
-## Where QuenchFlux fits
+## Where BoilFlux fits
 
-QuenchFlux aims to be the **reference implementation and benchmark** for inverse problems in boiling and
+BoilFlux aims to be the **reference implementation and benchmark** for inverse problems in boiling and
 quenching. It brings together a nonlinear multi-dimensional adjoint core, moving-plate kinematics, IR data
 handling and reproducible ground-truth cases in one tested, documented and permissively licensed
 package. Wrappers for the tools above and comparisons against them are part of the [roadmap](roadmap.md).

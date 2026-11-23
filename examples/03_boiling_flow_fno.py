@@ -6,7 +6,7 @@
 3. rolls it out on the held-out heater temperature (94 degC) and compares the
    temperature/velocity/interface fields and the heater heat flux.
 
-Requires:  pip install "quenchflux[ml]"
+Requires:  pip install "boilflux[ml]"
 Licence note: BubbleML 2.0 is CC BY-NC-SA 4.0. The data and any model trained
 on it are for non-commercial research only and are not redistributed here.
 
@@ -17,8 +17,8 @@ import argparse
 import json
 from pathlib import Path
 
-from quenchflux.operators.bubbleml import fetch_simulation
-from quenchflux.operators.train import (
+from boilflux.operators.bubbleml import fetch_simulation
+from boilflux.operators.train import (
     TrainConfig,
     evaluate_rollout,
     plot_rollout,

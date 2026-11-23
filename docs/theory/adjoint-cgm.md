@@ -70,7 +70,7 @@ temporal differences of the IR sequence (`estimate_noise_sigma`). The default \(
 ## End-time effect
 
 Since \(\boldsymbol\mu^{N_t+1}=0\), the gradient vanishes at the final time and the recovered flux is
-pulled towards the initial guess over the last diffusion time. QuenchFlux reports
+pulled towards the initial guess over the last diffusion time. BoilFlux reports
 `result.reliable`, which excludes the last \(\lceil 0.5\,L_z^2/(\alpha(T_0)\,\Delta t)\rceil\) frames. Benchmark scores are
 computed on this window.
 

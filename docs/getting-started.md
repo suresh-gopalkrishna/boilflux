@@ -2,25 +2,25 @@
 
 ## Install
 
-QuenchFlux needs Python 3.10 or newer and depends only on NumPy, SciPy, Matplotlib and PyYAML.
+BoilFlux needs Python 3.10 or newer and depends only on NumPy, SciPy, Matplotlib and PyYAML.
 
 === "pip (release)"
 
     ```bash
-    pip install quenchflux
+    pip install boilflux
     ```
 
 === "latest from GitHub"
 
     ```bash
-    pip install git+https://github.com/quenchflux/quenchflux.git
+    pip install git+https://github.com/boilflux/boilflux.git
     ```
 
 === "development"
 
     ```bash
-    git clone https://github.com/quenchflux/quenchflux.git
-    cd quenchflux
+    git clone https://github.com/boilflux/boilflux.git
+    cd boilflux
     pip install -e ".[dev,docs]"
     pytest
     ```
@@ -28,7 +28,7 @@ QuenchFlux needs Python 3.10 or newer and depends only on NumPy, SciPy, Matplotl
 Check the installation:
 
 ```bash
-quenchflux info
+boilflux info
 ```
 
 ## Your first reconstruction
@@ -37,7 +37,7 @@ The demo generates a synthetic moving-plate quench, inverts the back-face IR dat
 figures and scores. It runs in about a minute on a laptop.
 
 ```bash
-quenchflux demo --out demo
+boilflux demo --out demo
 ```
 
 This produces `demo/M3D-AA6082/` containing `flux_maps.png`, `centerline_xt.png`,
@@ -47,8 +47,8 @@ result as `.npz` files.
 ## The same in Python
 
 ```python
-import quenchflux as qf
-from quenchflux.plotting import save_all
+import boilflux as qf
+from boilflux.plotting import save_all
 
 # 1. a single round jet on an AA6082 plate moving at 10 mm/s
 scenario = qf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.010,
@@ -76,4 +76,4 @@ against `T_surface` to obtain local boiling curves.
 
 - Process your own camera data: [Data and IR cameras](user-guide/data.md)
 - Understand the method: [Theory](theory/index.md)
-- Compare methods: [QF-Bench](benchmark.md)
+- Compare methods: [BF-Bench](benchmark.md)

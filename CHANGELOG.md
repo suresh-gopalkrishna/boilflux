@@ -19,12 +19,12 @@ All notable changes are documented here. The format follows
 - Specht parabolic boiling-curve model and synthetic single-jet quench generator
   (impingement / free-flow zones, liquid coverage, refined-grid data to avoid inverse crime).
 - Robust IR noise estimation, error metrics, plots, NPZ dataset format, CLI
-  (`quenchflux info | demo | bench | synth | invert`).
-- QF-Bench tier-2 cases: `S2D-AA6082-stationary`, `M3D-AA6082`, `M3D-Ni`, `M3D-AA6082-window`.
+  (`boilflux info | demo | bench | synth | invert`).
+- BF-Bench tier-2 cases: `S2D-AA6082-stationary`, `M3D-AA6082`, `M3D-Ni`, `M3D-AA6082-window`.
 - Documentation website (MkDocs Material), CI, docs deployment and release workflows.
-- `quenchflux.regimes`: boiling-regime analysis (MHF/DNB, rewetting/Leidenfrost point, regime maps,
+- `boilflux.regimes`: boiling-regime analysis (MHF/DNB, rewetting/Leidenfrost point, regime maps,
   wetting-front velocity) with plots.
-- `quenchflux.operators` (extra `[ml]`): PyTorch FNO, BubbleML 2.0 range-read loader, autoregressive
+- `boilflux.operators` (extra `[ml]`): PyTorch FNO, BubbleML 2.0 range-read loader, autoregressive
   training with multi-step unrolling, rollout evaluation including heater heat flux.
 - Physics guide (boiling curve, nucleate boiling, CHF/DNB, transition boiling, Leidenfrost, film boiling,
   quench rewetting) and modelling guide (CFD/OpenFOAM, PINNs, neural operators).

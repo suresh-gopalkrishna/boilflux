@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-import quenchflux as qf
+import boilflux as qf
 
 
 def small_model(material=None, nt=20, dt=0.01, solver="direct", loss=None, ny=4):

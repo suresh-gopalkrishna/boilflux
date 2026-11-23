@@ -1,6 +1,6 @@
 import numpy as np
 
-import quenchflux as qf
+import boilflux as qf
 
 
 def test_moving_plate_inversion_recovers_flux():
@@ -28,7 +28,7 @@ def test_camera_window_mask_is_respected():
 
 
 def test_cli_info(capsys):
-    from quenchflux.cli import main
+    from boilflux.cli import main
 
     assert main(["info"]) == 0
     assert "M3D-AA6082" in capsys.readouterr().out

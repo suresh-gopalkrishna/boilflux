@@ -2,7 +2,7 @@ name: Release
 
 # Publishes to PyPI when a GitHub release is published.
 # One-time setup: add a "trusted publisher" for this repository on pypi.org
-# (project: quenchflux, workflow: release.yml, environment: pypi).
+# (project: boilflux, workflow: release.yml, environment: pypi).
 on:
   release:
     types: [published]

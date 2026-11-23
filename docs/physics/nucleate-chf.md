@@ -94,6 +94,6 @@ Measured quench MHFs (12–20 MW/m² in the ATE 2026 experiments) are an order o
 ## What this means for reconstructions
 
 - \(q_\text{max}\) and \(T_\text{DNB}\) are **local**. They vary with distance from the stagnation point
-  (impingement zone vs free-flow zone). QuenchFlux maps them over the surface (`regimes.feature_maps`).
+  (impingement zone vs free-flow zone). BoilFlux maps them over the surface (`regimes.feature_maps`).
 - The nucleate peak is sharp in time. Its reconstructed amplitude is limited by the time resolution and the
   through-thickness damping of the plate. Benchmark MHF errors are reported separately for this reason.

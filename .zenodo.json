@@ -1,5 +1,5 @@
 {
-  "title": "QuenchFlux: open inverse heat transfer for boiling and quenching",
+  "title": "BoilFlux: open inverse heat transfer for boiling and quenching",
   "upload_type": "software",
   "description": "Open-source Python toolkit for reconstructing transient, spatially resolved boiling heat flux on quenched (moving) plates from infrared thermography, using a nonlinear 3D finite-volume model and the adjoint conjugate-gradient method with discrepancy-principle regularisation. Includes synthetic quench benchmarks with ground truth.",
   "creators": [

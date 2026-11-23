@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-import quenchflux as qf
-from quenchflux.regimes import Regime, extract_features, feature_maps, wetting_front
+import boilflux as qf
+from boilflux.regimes import Regime, extract_features, feature_maps, wetting_front
 
 
 def test_features_of_specht_curve():

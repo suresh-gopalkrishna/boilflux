@@ -1,4 +1,4 @@
-"""QuenchFlux: open inverse heat transfer for boiling and quenching.
+"""BoilFlux: open inverse heat transfer for boiling and quenching.
 
 Reconstruct the transient, spatially resolved boiling heat flux on the
 quenched face of a (moving) hot plate from infrared thermography of the
@@ -12,7 +12,7 @@ Engineering 304 (2026) 132481, doi:10.1016/j.applthermaleng.2026.132481.
 """
 
 from .boiling import FFZ_DEFAULT, IZ_DEFAULT, SpechtBoilingCurve
-from .dataset import QuenchDataset
+from .dataset import BoilDataset
 from .forward import ForwardModel, SurfaceLoss, Trajectory
 from .grid import PlateGrid
 from .inverse import AdjointCGM, CGMOptions, InverseResult
@@ -35,7 +35,7 @@ __all__ = [
     "Material",
     "PlateGrid",
     "PlateMotion",
-    "QuenchDataset",
+    "BoilDataset",
     "SpechtBoilingCurve",
     "SurfaceLoss",
     "Trajectory",

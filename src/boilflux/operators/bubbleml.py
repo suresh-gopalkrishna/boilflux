@@ -5,7 +5,7 @@ interface-resolved two-phase boiling simulations: temperature, velocity,
 pressure and the level-set distance function ``dfun`` (positive in vapour).
 The data are hosted on Hugging Face (``hpcforge/BubbleML_2``) under the
 **CC BY-NC-SA 4.0** licence: they, and models trained on them, may not be used
-commercially. QuenchFlux therefore never redistributes the data or trained
+commercially. BoilFlux therefore never redistributes the data or trained
 weights; :func:`fetch_simulation` downloads only the frames you request
 (HTTP range reads), directly from the original host.
 """

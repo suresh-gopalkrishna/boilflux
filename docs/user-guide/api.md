@@ -1,6 +1,6 @@
 # Python API
 
-All public objects are importable from the top-level package: `import quenchflux as qf`.
+All public objects are importable from the top-level package: `import boilflux as qf`.
 
 ## Geometry and materials
 
@@ -33,11 +33,11 @@ All public objects are importable from the top-level package: `import quenchflux
 
 ## Data
 
-`qf.QuenchDataset(grid, material, dt, T0, Y, mask=None, sigma=None, q_true=None, motion=..., meta={})`
-:   `save(path)` and `QuenchDataset.load(path)`; properties `nt`, `t`.
+`qf.BoilDataset(grid, material, dt, T0, Y, mask=None, sigma=None, q_true=None, motion=..., meta={})`
+:   `save(path)` and `BoilDataset.load(path)`; properties `nt`, `t`.
 
 `qf.JetQuenchScenario(...)`
-:   Synthetic single-jet scenario; `generate()` returns a `QuenchDataset` with `q_true`.
+:   Synthetic single-jet scenario; `generate()` returns a `BoilDataset` with `q_true`.
 
 `qf.SpechtBoilingCurve(q_max, T_dnb, q_leid, T_leid, T_f, Q_dot)`
 :   Callable boiling curve; `flux_and_derivative(Ts)`. Defaults `qf.IZ_DEFAULT`, `qf.FFZ_DEFAULT`.
@@ -56,4 +56,4 @@ All public objects are importable from the top-level package: `import quenchflux
 ## Utilities
 
 `qf.estimate_noise_sigma(Y, mask=None)`, `qf.flux_metrics(q_est, q_true)`,
-`quenchflux.plotting.save_all(data, result, outdir)`, `quenchflux.benchmarks.run_case(name)`.
+`boilflux.plotting.save_all(data, result, outdir)`, `boilflux.benchmarks.run_case(name)`.

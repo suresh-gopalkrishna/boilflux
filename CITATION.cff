@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use QuenchFlux, please cite the software and the method paper below."
-title: "QuenchFlux: open inverse heat transfer for boiling and quenching"
+message: "If you use BoilFlux, please cite the software and the method paper below."
+title: "BoilFlux: open inverse heat transfer for boiling and quenching"
 type: software
 version: 0.1.0
 date-released: 2026-11-23
 license: MIT
-repository-code: "https://github.com/quenchflux/quenchflux"
-url: "https://quenchflux.github.io/quenchflux"
+repository-code: "https://github.com/boilflux/boilflux"
+url: "https://boilflux.github.io/boilflux"
 keywords:
   - inverse heat conduction problem
   - quenching
