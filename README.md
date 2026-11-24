@@ -61,11 +61,11 @@ boilflux bench     # run all BF-Bench cases
 ```
 
 ```python
-import boilflux as qf
+import boilflux as bf
 
-data = qf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.010).generate()
-result = qf.AdjointCGM(data).solve()
-print(qf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
+data = bf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.010).generate()
+result = bf.AdjointCGM(data).solve()
+print(bf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
 ```
 
 To use your own camera data, see `examples/02_experimental_ir_template.py` and the

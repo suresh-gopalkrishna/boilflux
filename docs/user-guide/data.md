@@ -30,7 +30,7 @@ Datasets are saved as compressed `.npz` files with a JSON header (`dataset.save(
 3. **Time origin**: \(t=0\) is the start of quenching (first water contact). Drop frames before it and
    use the frame just before contact for `T0`.
 4. **Kinematics**: plate speed and the lab position of the plate edge at \(t=0\) (`PlateMotion`).
-5. **Resample**: `Y, mask = qf.lab_frames_to_plate(frames, X_px, Y_px, t, grid, motion)`.
+5. **Resample**: `Y, mask = bf.lab_frames_to_plate(frames, X_px, Y_px, t, grid, motion)`.
 6. **Mask bad pixels**, reflections or the nozzle shadow by setting `mask[...] = False`.
 
 A complete template is in `examples/02_experimental_ir_template.py`.

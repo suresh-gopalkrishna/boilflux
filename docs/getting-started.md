@@ -47,19 +47,19 @@ result as `.npz` files.
 ## The same in Python
 
 ```python
-import boilflux as qf
+import boilflux as bf
 from boilflux.plotting import save_all
 
 # 1. a single round jet on an AA6082 plate moving at 10 mm/s
-scenario = qf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.010,
+scenario = bf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.010,
                                 nx=48, ny=24, nz=5, dt=0.01, nt=200, noise_sigma=2.0)
 data = scenario.generate()
 
 # 2. adjoint conjugate-gradient reconstruction
-result = qf.AdjointCGM(data, options=qf.CGMOptions(max_iter=150)).solve()
+result = bf.AdjointCGM(data, options=bf.CGMOptions(max_iter=150)).solve()
 
 # 3. scores and figures
-print(qf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
+print(bf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
 save_all(data, result, "figures")
 ```
 

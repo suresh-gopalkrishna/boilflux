@@ -7,7 +7,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-import boilflux as qf
+import boilflux as bf
 
 OUT = "docs/assets/figures/physics/"
 g = 9.81
@@ -34,13 +34,13 @@ def effusivity(k, rho, cp):
 
 e_w = effusivity(0.68, 958, 4216)  # water near 100 C
 for name, mat, T in (("AA6082", "aa6082", 500.0), ("Nickel", "nickel", 800.0), ("C45 steel", "c45", 800.0)):
-    m = qf.get_material(mat)
+    m = bf.get_material(mat)
     e_s = effusivity(m.k(T), m.rho(T), m.cp(T))
     Ti = (e_s * T + e_w * 20.0) / (e_s + e_w)
     print(f"contact temperature {name:9s} T0={T:.0f} C, water 20 C: e_s={e_s:.0f}, T_i={Ti:.0f} C")
 
 # --- annotated boiling curve -------------------------------------------
-bc = qf.IZ_DEFAULT
+bc = bf.IZ_DEFAULT
 T = np.linspace(25, 650, 2000)
 q = bc(T) / 1e6
 fig, ax = plt.subplots(figsize=(7.2, 4.0), constrained_layout=True)
@@ -71,7 +71,7 @@ fig.savefig(OUT + "boiling_curve_regimes.png", dpi=160)
 fig, ax = plt.subplots(figsize=(6.0, 3.4), constrained_layout=True)
 T0 = np.linspace(200, 1000, 200)
 for name, mat, c in (("AA6082", "aa6082", "#4cc3ff"), ("Nickel", "nickel", "#f26b1d"), ("C45", "c45", "#555")):
-    m = qf.get_material(mat)
+    m = bf.get_material(mat)
     e_s = effusivity(m.k(T0), m.rho(T0), m.cp(T0))
     ax.plot(T0, (e_s * T0 + e_w * 20) / (e_s + e_w), color=c, label=name)
 ax.axhline(T_spiegler, ls="--", color="k", lw=0.9)

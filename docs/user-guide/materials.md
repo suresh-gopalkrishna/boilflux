@@ -19,10 +19,10 @@ Properties are piecewise-linear tables in temperature, held constant outside the
 ## Custom tables
 
 ```python
-mat = qf.Material.from_csv("my_alloy.csv")     # columns: T_C,k,rho,cp (with header)
-mat = qf.Material(name="X", T_table=[20, 400, 800], k_table=[45, 38, 27],
+mat = bf.Material.from_csv("my_alloy.csv")     # columns: T_C,k,rho,cp (with header)
+mat = bf.Material(name="X", T_table=[20, 400, 800], k_table=[45, 38, 27],
                   rho_table=[7850, 7720, 7600], cp_table=[460, 600, 650])
-mat = qf.Material.constant(k=50.0, rho=7850.0, cp=480.0)
+mat = bf.Material.constant(k=50.0, rho=7850.0, cp=480.0)
 
-result = qf.AdjointCGM(data, material=mat).solve()
+result = bf.AdjointCGM(data, material=mat).solve()
 ```

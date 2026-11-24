@@ -6,6 +6,10 @@ hide:
 
 <div class="bf-hero" markdown>
 
+<div class="bf-hero-grid" markdown>
+
+<div class="bf-hero-text" markdown>
+
 # BoilFlux
 
 <p class="bf-tagline">Open inverse heat transfer for boiling and quenching. Reconstruct the transient,
@@ -18,6 +22,24 @@ back face, with a nonlinear 3D model and the adjoint conjugate-gradient method.<
 
 <div class="bf-badges"><span>MIT licence</span><span>Python ≥ 3.10</span><span>3D · nonlinear · moving plate</span><span>adjoint CGM</span><span>benchmarks with ground truth</span></div>
 
+</div>
+
+<div class="bf-hero-art">
+<img src="assets/hero-setup.svg" alt="A water jet quenches a hot plate moving to the left. The heat flux on the quenched face is unknown; an IR camera below measures the back-face temperature, from which BoilFlux infers the flux.">
+</div>
+
+</div>
+
+</div>
+
+## How it works
+
+<div class="bf-flow">
+<div class="bf-step"><span class="bf-step-n">1</span><strong>IR thermography</strong><span>Back-face temperature frames of the moving plate, in the lab frame.</span></div>
+<div class="bf-step"><span class="bf-step-n">2</span><strong>Plate frame</strong><span>Resample onto the plate, mask bad pixels, estimate the noise level.</span></div>
+<div class="bf-step"><span class="bf-step-n">3</span><strong>Adjoint CGM</strong><span>Nonlinear 3D conduction, Tikhonov regularisation, discrepancy-principle stop.</span></div>
+<div class="bf-step bf-step--hot"><span class="bf-step-n">4</span><strong>Heat flux q(x, y, t)</strong><span>Flux and temperature maps on the quenched face.</span></div>
+<div class="bf-step bf-step--hot"><span class="bf-step-n">5</span><strong>Boiling regimes</strong><span>Maximum heat flux, DNB and Leidenfrost temperatures, wetting front.</span></div>
 </div>
 
 ## Why BoilFlux
@@ -99,6 +121,36 @@ Right: BoilFlux reconstruction from noisy back-face IR data (σ = 2 K). The dash
 moving stagnation point.</figcaption>
 </figure>
 
+## Gallery
+
+<div class="bf-gallery" markdown>
+
+<a class="bf-shot" href="physics/">
+<img src="assets/figures/physics/boiling_curve_regimes.png" alt="Boiling curve of a jet-impingement quench with the convection, nucleate, transition and film boiling regimes marked" loading="lazy">
+<strong>Boiling curve and regimes</strong>
+<span>Where the maximum heat flux (DNB) and the Leidenfrost point sit on a jet-quench boiling curve.</span>
+</a>
+
+<a class="bf-shot" href="benchmark/">
+<img src="assets/figures/flux_maps.png" alt="True and recovered surface heat-flux maps at four times during a moving-plate quench" loading="lazy">
+<strong>True vs recovered flux maps</strong>
+<span>Surface heat flux at four instants of the <code>M3D-AA6082</code> benchmark, from noisy IR data.</span>
+</a>
+
+<a class="bf-shot" href="physics/regime-analysis/">
+<img src="assets/figures/regimes/m3d_feature_maps.png" alt="Surface maps of maximum heat flux, DNB temperature, rewetting time and boiling regime" loading="lazy">
+<strong>Regime maps</strong>
+<span>Maximum heat flux, DNB temperature, rewetting time and the regime field across the plate.</span>
+</a>
+
+<a class="bf-shot" href="physics/neural-operators/">
+<img src="assets/figures/operators/rollout_snapshots.png" alt="Bubble and temperature snapshots from boiling CFD compared with a Fourier neural operator rollout" loading="lazy">
+<strong>Neural operator for boiling flow</strong>
+<span>A Fourier neural operator rolls out bubbles and temperature next to the CFD reference.</span>
+</a>
+
+</div>
+
 ## Try it in a minute
 
 ```bash
@@ -108,11 +160,11 @@ boilflux bench                # run all BF-Bench cases and print the score table
 ```
 
 ```python
-import boilflux as qf
+import boilflux as bf
 
-data = qf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.01).generate()
-result = qf.AdjointCGM(data).solve()
-print(qf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
+data = bf.JetQuenchScenario(material="AA6082", T0=500.0, plate_velocity=0.01).generate()
+result = bf.AdjointCGM(data).solve()
+print(bf.flux_metrics(result.q[result.reliable], data.q_true[result.reliable]))
 ```
 
 ## Built on published science

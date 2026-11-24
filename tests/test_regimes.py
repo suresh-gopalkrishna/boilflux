@@ -1,12 +1,12 @@
 import numpy as np
 import pytest
 
-import boilflux as qf
+import boilflux as bf
 from boilflux.regimes import Regime, extract_features, feature_maps, wetting_front
 
 
 def test_features_of_specht_curve():
-    bc = qf.SpechtBoilingCurve()  # q_max 6.5 MW/m2 at 200 C, Leidenfrost 450 C
+    bc = bf.SpechtBoilingCurve()  # q_max 6.5 MW/m2 at 200 C, Leidenfrost 450 C
     t = np.linspace(0, 5, 1001)
     Ts = 600 - 110 * t  # monotonic cooling 600 -> 50 C
     f = extract_features(bc(Ts), Ts, t, smooth=1, frac=0.02)
@@ -27,7 +27,7 @@ def test_not_wetted_record():
 def test_maps_and_front():
     t = np.linspace(0, 2, 201)
     x = np.linspace(0, 0.03, 11)
-    bc = qf.SpechtBoilingCurve()
+    bc = bf.SpechtBoilingCurve()
     Ts = 600 - 400 * np.clip(t[:, None] - 20 * x[None, :], 0, None)  # front moving at 0.05 m/s
     q = bc(Ts)[:, None, :]
     maps = feature_maps(q, Ts[:, None, :], t, smooth=1)

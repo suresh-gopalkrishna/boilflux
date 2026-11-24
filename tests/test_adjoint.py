@@ -3,12 +3,12 @@
 import numpy as np
 import pytest
 
-import boilflux as qf
+import boilflux as bf
 
 
 def setup(material):
-    g = qf.PlateGrid(0.02, 0.01, 0.004, nx=6, ny=3, nz=4)
-    fm = qf.ForwardModel(g, material, 0.01, 12, 400.0, solver="direct")
+    g = bf.PlateGrid(0.02, 0.01, 0.004, nx=6, ny=3, nz=4)
+    fm = bf.ForwardModel(g, material, 0.01, 12, 400.0, solver="direct")
     rng = np.random.default_rng(0)
     q = 1e6 * (1 + rng.random((fm.nt, *g.face_shape)))
     Y = fm.run(q=q * 0.8).top_face()[1:] + rng.standard_normal((fm.nt, *g.face_shape))
@@ -20,7 +20,7 @@ def misfit(fm, q, Y):
 
 
 def test_gradient_matches_finite_differences_linear():
-    fm, q, Y, rng = setup(qf.Material.constant(60.0, 7800.0, 480.0))
+    fm, q, Y, rng = setup(bf.Material.constant(60.0, 7800.0, 480.0))
     traj = fm.run(q=q)
     r = traj.top_face()[1:] - Y
     grad = fm.adjoint(traj, r)
@@ -31,7 +31,7 @@ def test_gradient_matches_finite_differences_linear():
 
 
 def test_sensitivity_is_transpose_of_adjoint():
-    fm, q, Y, rng = setup(qf.get_material("nickel"))  # nonlinear, frozen coefficients
+    fm, q, Y, rng = setup(bf.get_material("nickel"))  # nonlinear, frozen coefficients
     traj = fm.run(q=q)
     dq = rng.standard_normal(q.shape)
     w = rng.standard_normal(q.shape)
@@ -41,7 +41,7 @@ def test_sensitivity_is_transpose_of_adjoint():
 
 
 def test_gradient_nonlinear_is_close():
-    fm, q, Y, rng = setup(qf.get_material("aa6082"))
+    fm, q, Y, rng = setup(bf.get_material("aa6082"))
     traj = fm.run(q=q)
     grad = fm.adjoint(traj, traj.top_face()[1:] - Y)
     dq = 1e5 * rng.standard_normal(q.shape)

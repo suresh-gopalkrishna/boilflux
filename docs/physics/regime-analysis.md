@@ -4,11 +4,11 @@
 identifies the characteristic points of the local transient boiling curve and the regime sequence.
 
 ```python
-import boilflux as qf
+import boilflux as bf
 from boilflux.regimes import (extract_features, feature_maps, wetting_front,
                                 plot_boiling_curve_regimes, plot_feature_maps)
 
-res = qf.AdjointCGM(data).solve()
+res = bf.AdjointCGM(data).solve()
 sl = res.reliable                               # drop the end-time window
 maps = feature_maps(res.q[sl], res.T_surface[sl], data.t[sl])
 maps["q_max"], maps["T_dnb"], maps["T_leid"], maps["t_wet"], maps["regime"]   # (ny, nx) / (nt, ny, nx)
