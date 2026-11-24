@@ -10,6 +10,8 @@ hide:
 
 <div class="bf-hero-text" markdown>
 
+<p class="bf-kicker">Inverse heat transfer · boiling · quenching</p>
+
 # BoilFlux
 
 <p class="bf-tagline">Open inverse heat transfer for boiling and quenching. Reconstruct the transient,
@@ -17,16 +19,20 @@ spatially resolved boiling heat flux on a quenched, moving hot plate from infrar
 back face, with a nonlinear 3D model and the adjoint conjugate-gradient method.</p>
 
 [Get started](getting-started.md){ .md-button .md-button--primary }
-[Read the theory](theory/index.md){ .md-button }
-[View on GitHub](https://github.com/suresh-gopalkrishna/boilflux){ .md-button }
+[Read the book](book/index.md){ .md-button }
+[GitHub](https://github.com/suresh-gopalkrishna/boilflux){ .md-button }
 
 <div class="bf-badges"><span>MIT licence</span><span>Python ≥ 3.10</span><span>3D · nonlinear · moving plate</span><span>adjoint CGM</span><span>benchmarks with ground truth</span></div>
 
 </div>
 
-<div class="bf-hero-art">
-<img src="assets/hero-setup.svg" alt="A water jet quenches a hot plate moving to the left. The heat flux on the quenched face is unknown; an IR camera below measures the back-face temperature, from which BoilFlux infers the flux.">
-</div>
+<figure class="bf-sim">
+<canvas class="bf-sim-canvas" role="img" aria-label="Live simulation: a water jet sweeps along a 500 °C aluminium plate. Top: the surface heat flux, which peaks behind the wetting front. Middle: the temperature field through the plate. Bottom: the smoothed back-face temperature that an infrared camera records."></canvas>
+<figcaption><b>Live: a jet quench, computed in your browser.</b> A water jet sweeps a 500 °C, 5 mm AA6082 plate.
+Top: the surface heat flux from the Specht boiling curve. Middle: temperature through the plate (thickness × 4).
+Bottom: the back-face temperature an IR camera sees. BoilFlux solves the reverse: from the bottom curve back to
+the top one.</figcaption>
+</figure>
 
 </div>
 
@@ -40,6 +46,51 @@ back face, with a nonlinear 3D model and the adjoint conjugate-gradient method.<
 <div class="bf-step"><span class="bf-step-n">3</span><strong>Adjoint CGM</strong><span>Nonlinear 3D conduction, Tikhonov regularisation, discrepancy-principle stop.</span></div>
 <div class="bf-step bf-step--hot"><span class="bf-step-n">4</span><strong>Heat flux q(x, y, t)</strong><span>Flux and temperature maps on the quenched face.</span></div>
 <div class="bf-step bf-step--hot"><span class="bf-step-n">5</span><strong>Boiling regimes</strong><span>Maximum heat flux, DNB and Leidenfrost temperatures, wetting front.</span></div>
+</div>
+
+## The BoilFlux book
+
+A complete, derivation-first text that runs from the energy balance to neural operators. Every result used by the
+software is derived, with its assumptions, and linked to the code that implements it.
+
+<div class="bf-parts" markdown>
+
+<div class="bf-part" markdown>
+<span class="bf-part-n">Part I</span>
+[**Heat conduction**](book/01-energy-conservation.md): energy balance, Fourier's law, analytical solutions, how the
+plate filters the surface flux.
+</div>
+
+<div class="bf-part" markdown>
+<span class="bf-part-n">Part II</span>
+[**Boiling and quenching**](book/03-phase-change.md): nucleation, the boiling curve from hydrodynamic instability,
+wetting fronts and moving plates.
+</div>
+
+<div class="bf-part" markdown>
+<span class="bf-part-n">Part III</span>
+[**Numerical solution**](book/06-finite-volumes.md): finite volumes, implicit time stepping, discrete conservation
+and the maximum principle.
+</div>
+
+<div class="bf-part" markdown>
+<span class="bf-part-n">Part IV</span>
+[**Inverse heat conduction**](book/08-ill-posedness.md): ill-posedness, regularisation, adjoint gradients and the
+conjugate-gradient method.
+</div>
+
+<div class="bf-part" markdown>
+<span class="bf-part-n">Part V</span>
+[**Scientific machine learning**](book/12-ml-foundations.md): back-propagation as an adjoint, PINNs, Fourier neural
+operators.
+</div>
+
+<div class="bf-part" markdown>
+<span class="bf-part-n">Part VI</span>
+[**Uncertainty and hybrid methods**](book/15-uncertainty.md): Bayesian inversion, learned priors and verified
+surrogates.
+</div>
+
 </div>
 
 ## Why BoilFlux

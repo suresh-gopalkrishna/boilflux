@@ -27,16 +27,19 @@ A_n\,\boldsymbol\mu^n = H^\top M_n\,\mathbf r^n + C_{n+1}\,\boldsymbol\mu^{n+1},
 \qquad n = N_t,\dots,1,
 \]
 
-and the gradient
+and the gradient with respect to the optimisation variable \(\mathbf p = \mathbf q/Q\), \(Q = 10^6\) W/m²,
 
 \[
-\frac{\partial J}{\partial \mathbf q^n} = -B^\top\boldsymbol\mu^n + \gamma\,\mathbf q^n .
+\frac{\partial J}{\partial \mathbf p^n} = -Q\,B^\top\boldsymbol\mu^n + \gamma\,\mathbf p^n .
 \]
 
-This is the discrete counterpart of Eqs. (27)–(28) of the reference paper. Because it is derived
-from the discrete equations, it is exact for the linearised map. The test suite checks this against
-finite differences (relative error \(< 10^{-6}\)) and checks that the adjoint and sensitivity operators
-are transposes of each other.
+This is the discrete counterpart of Eqs. (27)–(28) of the reference paper. Because the coefficients are frozen on
+the current trajectory, it is the exact gradient of the **quasi-linearised** problem. The test suite checks three
+things: agreement with finite differences to a relative \(10^{-6}\) for constant properties; that the adjoint and
+sensitivity operators are exact transposes (to \(10^{-8}\), also for strongly temperature-dependent nickel); and
+agreement with finite differences within 5 % for AA6082, where the frozen properties make the gradient slightly
+inexact. The line search re-evaluates the true objective, so this affects only the search direction. Derivation:
+[book, Chapter 10](../book/10-adjoint.md).
 
 ## Sensitivity problem and step size
 
@@ -76,7 +79,8 @@ computed on this window.
 
 ## Cost
 
-Each iteration needs three linear solves per time step (direct, adjoint, sensitivity) plus one more
-for the nonlinear check. Systems up to a few thousand cells use a sparse direct solver. Larger ones use
+Each iteration needs three linear solves per time step: adjoint, sensitivity, and the forward solve at the
+trial step, which is reused as the direct solve of the next iteration. Each halving of the step adds one forward
+solve. Systems up to a few thousand cells use a sparse direct solver. Larger ones use
 Jacobi-preconditioned conjugate gradients warm-started from the previous step. For the
 48 × 24 × 5 benchmark grid with 200 frames, one CGM iteration takes about one second on a laptop CPU.

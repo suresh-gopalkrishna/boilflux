@@ -50,7 +50,8 @@ This explains the existence of a minimum, but not the high \(T_\text{Leid}\) see
 
 When the liquid touches a wall hotter than its **superheat limit**, liquid in contact flashes to vapour
 explosively, with no cavities needed, and contact cannot be maintained. From the van der Waals spinodal,
-Spiegler et al. estimated \(T_\text{Leid} \approx \tfrac{27}{32}T_c\), about **273 °C for water**. Kinetic
+Spiegler et al. estimated \(T_\text{Leid} \approx \tfrac{27}{32}T_c\) in absolute temperature, which gives 546 K, about
+**273 °C for water** (derivation: [book, Section 3.5](../book/03-phase-change.md)). Kinetic
 homogeneous-nucleation theory gives about 300–320 °C at atmospheric pressure.
 
 ### 3. Contact temperature: the role of the solid

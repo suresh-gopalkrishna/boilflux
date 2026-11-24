@@ -45,7 +45,8 @@ extra_css:
 
 extra_javascript:
   - assets/mathjax-config.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+  - assets/hero-sim.js
 
 markdown_extensions:
   - admonition
@@ -74,6 +75,35 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting started: getting-started.md
+  - Book:
+      - book/index.md
+      - "Part I · Heat conduction":
+          - 1. Energy conservation and Fourier's law: book/01-energy-conservation.md
+          - 2. Analytical solutions and scales: book/02-analytical-solutions.md
+      - "Part II · Boiling and quenching":
+          - 3. Phase change and nucleation: book/03-phase-change.md
+          - 4. The boiling curve: book/04-boiling-curve.md
+          - 5. Jet quenching and rewetting: book/05-jet-quenching.md
+      - "Part III · Numerical solution":
+          - 6. Finite-volume discretisation: book/06-finite-volumes.md
+          - 7. Time integration and verification: book/07-time-integration.md
+      - "Part IV · Inverse heat conduction":
+          - 8. Ill-posedness: book/08-ill-posedness.md
+          - 9. Regularisation: book/09-regularisation.md
+          - 10. Sensitivity and adjoint problems: book/10-adjoint.md
+          - 11. The conjugate-gradient method: book/11-cgm.md
+      - "Part V · Scientific machine learning":
+          - 12. Networks, gradients, optimisation: book/12-ml-foundations.md
+          - 13. Physics-informed neural networks: book/13-pinns.md
+          - 14. Neural operators: book/14-neural-operators.md
+      - "Part VI · Uncertainty and hybrid methods":
+          - 15. Bayesian inverse problems: book/15-uncertainty.md
+          - 16. Hybrid inversion and open problems: book/16-hybrid-outlook.md
+      - Appendices:
+          - A. Notation and units: book/appendix-a-notation.md
+          - B. Vector calculus: book/appendix-b-vector-calculus.md
+          - C. Calculus of variations: book/appendix-c-variations.md
+          - D. Linear algebra: book/appendix-d-linear-algebra.md
   - Theory:
       - theory/index.md
       - Moving-plate formulation: theory/moving-plate.md

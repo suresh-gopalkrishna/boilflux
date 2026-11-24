@@ -25,10 +25,12 @@ nuclear reflood) treat the front as a moving boundary. Behind it a high heat-tra
 the wall. Ahead of it, axial conduction precools the dry wall to the rewetting temperature. The front velocity
 then depends on a Péclet number \(u_f\,s/\alpha\) and a Biot number \(h\,s/k\) of the plate of thickness \(s\):
 
-- thin, highly conducting walls: front speed ∝ \(\sqrt{h/(k s)}\,\alpha / (\text{superheat ratio})\)
-- thick walls: two-dimensional conduction, with speed nearly independent of thickness
+- thin, highly conducting walls: \(u = \alpha\sqrt{h/(ks)}\,/\sqrt{\Theta(\Theta+1)}\), with
+  \(\Theta = (T_w - T_\text{Leid})/(T_\text{Leid} - T_\text{sat})\) (Yamanouchi; derivation in
+  [book, Section 5.3](../book/05-jet-quenching.md))
+- thick walls: two-dimensional conduction, with speed independent of thickness, \(u = (h/\rho c)\,F(\Theta)\)
 
-The superheat ratio \((T_w - T_\text{Leid})/(T_\text{Leid} - T_\text{sat})\) is central: the hotter the wall
+The superheat ratio \(\Theta\) is central: for \(\Theta\gg1\) the speed falls as \(1/\Theta\), so the hotter the wall
 above its rewetting temperature, the slower the front. This is consistent with the slow fronts on
 800 °C nickel compared with 500 °C AA6082.
 
@@ -37,8 +39,8 @@ above its rewetting temperature, the slower the front. This is consistent with t
 When the plate moves under a stationary jet (run-out tables, strip cooling, moving-plate rigs):
 
 - The cooling pattern is **asymmetric**. On the upstream side the plate arrives hot and meets the front
-  head-on. On the downstream side already-cooled metal leaves the jet. The upstream front is pushed against the plate
-  motion and can stall when the plate speed equals the front speed in the plate frame.
+  head-on. On the downstream side already-cooled metal leaves the jet. The upstream front advances into the incoming
+  plate and stalls at a fixed distance from the jet when the plate speed equals the front speed.
 - A material point experiences a **sequence of regimes in time** that depends on its distance from the
   jet path, not only on its temperature.
 - The relevant frame for conduction is the plate frame. For the flow, it is the jet frame. BoilFlux uses the plate
