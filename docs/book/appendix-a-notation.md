@@ -33,7 +33,7 @@
 | \(f_i\) | filter factor | – |
 | \(\theta\) (Part V) | network parameters | – |
 
-## Water at 1 atm (saturation, 100 °C)
+## Water at 1 atm (saturation, 100 °C) { #water-at-1-atm }
 
 Values from standard steam tables, as used in Chapters 3–4 and in `docs/scripts/make_physics_figures.py`.
 
